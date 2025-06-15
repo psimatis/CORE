@@ -1,57 +1,37 @@
-#!/usr/bin/env bash
-###############################################################################
-# run.sh – Drive CORE's offline engine in Docker and capture a timestamped log
-#
-# Usage:
-#   ./run.sh [QUERY_FILE] [DECLARATION_FILE] [CSV_FILE]
-#
-# If you omit arguments the Smart‑Homes demo included in the repo is used.
-# A log is written to ./logs/ with the query name and a UTC timestamp.
-###############################################################################
+# Examples
+# ./run.sh            # remote image, Release build (default)
+# ./run.sh local      # local image,   Release build
+# ./run.sh local debug
+# ./run.sh remote debug
+
 set -euo pipefail
 
-#------------------------------------------------------------------------
-# Resolve repository root (directory containing this script)
-#------------------------------------------------------------------------
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ./run.sh [local|remote] [debug|release]
+# - remote  (default): use pre‑built crivero1/cer-core via docker‑compose
+# - local            : build (if needed) and run image "core-dev"
+#
+MODE=${1:-remote}
+BUILD=${2:-release}
+MODE=${MODE,,}; BUILD=${BUILD,,}
 
-#------------------------------------------------------------------------
-# Pick arguments or fall back to demo data
-#------------------------------------------------------------------------
-QUERY="${1:-src/targets/experiments/smart_homes/queries/q1_none.txt}"
-DECL="${2:-src/targets/experiments/smart_homes/declaration.core}"
-CSV="${3:-src/targets/experiments/smart_homes/smart_homes_data.csv}"
+IMG_REMOTE=core-terminal    # service name in docker-compose.yml
+IMG_LOCAL=core-dev          # tag for locally‑built image
+DIR=$([[ $BUILD == debug ]] && echo Debug || echo Release)
 
-# Basic sanity check
-for f in "$QUERY" "$DECL" "$CSV"; do
-  if [[ ! -f "$REPO_ROOT/$f" ]]; then
-    echo "❌  Can't find $f" >&2
-    exit 1
+CMD=(/CORE/build/$DIR/offline \
+     --query src/targets/experiments/stocks/queries/other-q1_none.txt \
+     --declaration src/targets/experiments/stocks/declaration.core \
+     --csv src/targets/experiments/stocks/stock_data.csv)
+
+if [[ $MODE == remote ]]; then
+  docker compose run --rm -e TRACY_NO_INVARIANT_CHECK=1 $IMG_REMOTE "${CMD[@]}"
+else
+  # build image once if it doesn't exist
+  if ! docker image inspect $IMG_LOCAL > /dev/null 2>&1; then
+    echo "Building local image ($IMG_LOCAL)… this can take several minutes."
+    docker build --target build -t $IMG_LOCAL .
   fi
-done
-
-#------------------------------------------------------------------------
-# Prepare log file – ./logs/<query>_YYYY-MM-DD_HH-MM-SS.log
-#------------------------------------------------------------------------
-LOG_DIR="$REPO_ROOT/logs"
-mkdir -p "$LOG_DIR"
-STAMP="$(date -u +"%Y-%m-%d_%H-%M-%S")"
-BASE="$(basename "${QUERY%%.*}")"   # strip extension
-LOG_FILE="$LOG_DIR/${BASE}_${STAMP}.log"
-
-echo "▶ Running CORE – log → $LOG_FILE"
-
-#------------------------------------------------------------------------
-# Launch the pre‑built engine in the runtime container and tee output
-#------------------------------------------------------------------------
-docker compose run --rm \
-  -e TRACY_NO_INVARIANT_CHECK=1 \
-  -v "$REPO_ROOT":/workspace \
-  -w /workspace \
-  core-terminal \
-  /CORE/build/Release/offline \
-    --query "$QUERY" \
-    --declaration "$DECL" \
-    --csv "$CSV" 2>&1 | tee "$LOG_FILE"
-
-exit ${PIPESTATUS[0]}  # propagate offline's exit code
+  docker run --rm -e TRACY_NO_INVARIANT_CHECK=1 \
+    -v "$PWD":/workspace -w /workspace \
+    $IMG_LOCAL "${CMD[@]}"
+fi

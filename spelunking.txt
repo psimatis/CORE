@@ -1,0 +1,31 @@
+To run docker, go inside and see whats up
+
+panos@the-beast:~/Desktop/CER/Code/CORE$ docker compose up -d
+[+] Running 1/1
+ ✔ Container core-core-terminal-1  Started                                                                                                                                                               0.1s 
+panos@the-beast:~/Desktop/CER/Code/CORE$ docker compose exec core-terminal sh
+# ls
+build  py  requirements.txt
+# cd build
+# cd Release
+# ls
+CMakeCache.txt  _deps                                    build.ninja          compile_commands.json  libcore.a  metadata  offline        online_server    tests
+CMakeFiles      _pycore.cpython-312-x86_64-linux-gnu.so  cmake_install.cmake  generators             main.py    models    online_client  online_streamer  third_party_tests
+# ./offline
+Tracy Profiler initialization failure: CPU doesn't support invariant TSC.
+Define TRACY_NO_INVARIANT_CHECK=1 to ignore this error, *if you know what you are doing*.
+Alternatively you may rebuild the application with the TRACY_TIMER_FALLBACK define to use lower resolution timer.
+# TRACY_NO_INVARIANT_CHECK=1 ./offline --help
+Usage: core [--help] [--version] [--webserver VAR] [--router VAR] [--stream_listener VAR] [--startingport VAR] --query VAR --declaration VAR [--options VAR] --csv VAR
+
+Optional arguments:
+  -h, --help             shows help message and exits 
+  -v, --version          prints version information and exits 
+  -w, --webserver        Port for the webserver [nargs=0..1] [default: 443]
+  -r, --router           Port for the router [nargs=0..1] [default: 5000]
+  -s, --stream_listener  Port for the stream listener [nargs=0..1] [default: 5001]
+  -sp, --startingport    Starting port for the server [nargs=0..1] [default: 5002]
+  -q, --query            Path to the query file [required]
+  -d, --declaration      Path to the declaration file [required]
+  -o, --options          Path to the options file [nargs=0..1] [default: ""]
+  -c, --csv              Path to the csv data file [required]
