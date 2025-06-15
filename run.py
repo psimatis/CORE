@@ -1,72 +1,49 @@
 """
-run.py – Drive CORE's offline engine in Docker and capture a timestamped log
-
+run.py – run CORE offline via Docker (remote or local image) and time it.
 Usage:
-    python3 run.py [QUERY_FILE] [DECLARATION_FILE] [CSV_FILE]
-
-If no arguments are given, it runs the stocks demo.
-A log is written to ./logs/ with the query name and a UTC timestamp.
+  python run.py [local|remote] [debug|release] [QUERY] [DECL] [CSV]
 """
 
-import subprocess
-import sys
-import os
-from datetime import datetime
+import subprocess, sys, os, time, shlex
 
-# ----------------------------------------------------------------------------
-# Resolve repository root
-# ----------------------------------------------------------------------------
-REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__))
+MODE  = (sys.argv[1].lower() if len(sys.argv) > 1 else "remote")
+BUILD = (sys.argv[2].lower() if len(sys.argv) > 2 else "release")
+DIR   = "Debug" if BUILD == "debug" else "Release"
 
-# ----------------------------------------------------------------------------
-# Pick arguments or fall back to demo data
-# ----------------------------------------------------------------------------
-def_arg = lambda i, fallback: sys.argv[i] if len(sys.argv) > i else fallback
+QUERY = sys.argv[3] if len(sys.argv) > 3 else \
+        "src/targets/experiments/stocks/queries/other-q1_none.txt"
+DECL  = sys.argv[4] if len(sys.argv) > 4 else \
+        "src/targets/experiments/stocks/declaration.core"
+CSV   = sys.argv[5] if len(sys.argv) > 5 else \
+        "src/targets/experiments/stocks/stock_data.csv"
 
-query = def_arg(1, "src/targets/experiments/stocks/queries/other-q1_none.txt")
-declaration = def_arg(2, "src/targets/experiments/stocks/declaration.core")
-csv = def_arg(3, "src/targets/experiments/stocks/stock_data.csv")
+for f in (QUERY, DECL, CSV):
+    if not os.path.isfile(os.path.join(ROOT, f)):
+        sys.exit(f"❌ Missing: {f}")
 
-for f in [query, declaration, csv]:
-    full_path = os.path.join(REPO_ROOT, f)
-    if not os.path.isfile(full_path):
-        print(f"❌  Can't find {f}", file=sys.stderr)
-        sys.exit(1)
+IMG_REMOTE = "core-terminal"
+IMG_LOCAL  = "core-dev"
+MOUNT_FLAGS = ["-v", f"{ROOT}:/workspace", "-w", "/workspace"]
+ENV_FLAG = ["-e", "TRACY_NO_INVARIANT_CHECK=1"]
 
-# ----------------------------------------------------------------------------
-# Prepare log file path
-# ----------------------------------------------------------------------------
-LOG_DIR = os.path.join(REPO_ROOT, "logs")
-os.makedirs(LOG_DIR, exist_ok=True)
+CMD = [f"/CORE/build/{DIR}/offline",
+       "--query",        f"/workspace/{QUERY}",
+       "--declaration", f"/workspace/{DECL}",
+       "--csv",         f"/workspace/{CSV}"]
 
-timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
-base = os.path.splitext(os.path.basename(query))[0]
-log_file = os.path.join(LOG_DIR, f"{base}_{timestamp}.log")
+def run_timed(args):
+    print("➜", " ".join(shlex.quote(a) for a in args))
+    t0 = time.perf_counter()
+    subprocess.run(args, check=True)
+    print(f"real {time.perf_counter() - t0:.3f}s")
 
-print(f"▶ Running CORE – log → {log_file}")
-
-# ----------------------------------------------------------------------------
-# Construct docker command
-# ----------------------------------------------------------------------------
-docker_cmd = [
-    "docker", "compose", "run", "--rm",
-    "-e", "TRACY_NO_INVARIANT_CHECK=1",
-    "-v", f"{REPO_ROOT}:/workspace",
-    "-w", "/workspace",
-    "core-terminal",
-    "/CORE/build/Release/offline",
-    "--query", query,
-    "--declaration", declaration,
-    "--csv", csv
-]
-
-# ----------------------------------------------------------------------------
-# Run and capture output
-# ----------------------------------------------------------------------------
-with open(log_file, "w") as log:
-    process = subprocess.Popen(docker_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    for line in process.stdout:
-        print(line, end='')
-        log.write(line)
-    process.wait()
-    sys.exit(process.returncode)
+if MODE == "remote":
+    cmd = ["docker", "compose", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_REMOTE, *CMD]
+    run_timed(cmd)
+else:
+    if subprocess.call(["docker", "image", "inspect", IMG_LOCAL], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
+        print("Building local image (core-dev)…")
+        subprocess.run(["docker", "build", "--target", "build", "-t", IMG_LOCAL, "."], check=True)
+    cmd = ["docker", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD]
+    run_timed(cmd)
