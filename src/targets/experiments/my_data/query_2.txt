@@ -1,0 +1,5 @@
+SELECT * FROM S
+WHERE (BUY as msft; BUY as msft)
+FILTER msft[name = 'MSFT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY

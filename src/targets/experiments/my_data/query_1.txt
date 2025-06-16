@@ -1,0 +1,5 @@
+SELECT * FROM S
+WHERE (SELL as qqq; BUY as rimm)
+FILTER qqq[name = 'QQQ'] AND rimm[name = 'RIMM']
+WITHIN 1000000 [stock_time]
+CONSUME BY ANY

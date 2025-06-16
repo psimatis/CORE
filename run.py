@@ -21,9 +21,14 @@ DIR = "Debug" if BUILD == "debug" else "Release"
 # CSV = "src/targets/experiments/unordered_stocks/stock_data.csv"
 
 # Smart homes
-QUERY = "src/targets/experiments/smart_homes/queries/q1_none.txt"
-DECL = "src/targets/experiments/smart_homes/declaration.core"
-CSV = "src/targets/experiments/smart_homes/smart_homes_data.csv"
+# QUERY = "src/targets/experiments/smart_homes/queries/q1_none.txt"
+# DECL = "src/targets/experiments/smart_homes/declaration.core"
+# CSV = "src/targets/experiments/smart_homes/smart_homes_data.csv"
+
+# My data
+QUERY = "src/targets/experiments/my_data/query_2.txt"
+DECL = "src/targets/experiments/my_data/declaration.core"
+CSV = "src/targets/experiments/my_data/my_data.csv"
 
 IMG_REMOTE = "core-terminal"
 IMG_LOCAL = "core-dev"
