@@ -29,3 +29,13 @@ Optional arguments:
   -d, --declaration      Path to the declaration file [required]
   -o, --options          Path to the options file [nargs=0..1] [default: ""]
   -c, --csv              Path to the csv data file [required]
+
+
+Artikis said that CORE does not work if events are not in order.
+It seems to be true. 
+If I use the following in my toy data it returns 2 pairs (first 2 and last 2).
+Which is incorrect because the time is out the within window
+BUY,1862,MSFT,573,26.1,90420944
+BUY,1862,MSFT,573,26.1,30421940
+BUY,1862,MSFT,573,26.1,30421941
+BUY,1861,MSFT,1300,26.1,30421944
