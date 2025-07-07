@@ -1,23 +1,19 @@
-To run docker, go inside and see whats up
+To run:
+1) docker compose up -d
+2) python run.py
 
-panos@the-beast:~/Desktop/CER/Code/CORE$ docker compose up -d
-[+] Running 1/1
- ✔ Container core-core-terminal-1  Started                                                                                                                                                               0.1s 
-panos@the-beast:~/Desktop/CER/Code/CORE$ docker compose exec core-terminal sh
-# ls
-build  py  requirements.txt
-# cd build
-# cd Release
-# ls
-CMakeCache.txt  _deps                                    build.ninja          compile_commands.json  libcore.a  metadata  offline        online_server    tests
-CMakeFiles      _pycore.cpython-312-x86_64-linux-gnu.so  cmake_install.cmake  generators             main.py    models    online_client  online_streamer  third_party_tests
-# ./offline
-Tracy Profiler initialization failure: CPU doesn't support invariant TSC.
-Define TRACY_NO_INVARIANT_CHECK=1 to ignore this error, *if you know what you are doing*.
-Alternatively you may rebuild the application with the TRACY_TIMER_FALLBACK define to use lower resolution timer.
-# TRACY_NO_INVARIANT_CHECK=1 ./offline --help
+This executes offline.cpp
+
+
+Key files:
+offline.cpp
+  Sets up a server with the given command line arguments.
+  Then it reads the query and declaration files (i.e., set up how the stream looks like).
+  Then it sends the stream of events to the server.
+  
+
+Detailed usage:
 Usage: core [--help] [--version] [--webserver VAR] [--router VAR] [--stream_listener VAR] [--startingport VAR] --query VAR --declaration VAR [--options VAR] --csv VAR
-
 Optional arguments:
   -h, --help             shows help message and exits 
   -v, --version          prints version information and exits 
@@ -39,3 +35,5 @@ BUY,1862,MSFT,573,26.1,90420944
 BUY,1862,MSFT,573,26.1,30421940
 BUY,1862,MSFT,573,26.1,30421941
 BUY,1861,MSFT,1300,26.1,30421944
+
+But the core+ little paper says the user can set the own timeseries.

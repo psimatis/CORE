@@ -18,6 +18,7 @@ cmake-build-debug
 .env
 .antlr
 .venv
+venv/
 
 # MACOS
 .DS_Store

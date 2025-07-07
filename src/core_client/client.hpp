@@ -120,12 +120,10 @@ class Client {
   }
 
   Types::PortNumber add_query(std::string query) {
-    Types::ClientRequest create_streamer{std::move(query),
-                                         Types::ClientRequestType::AddQuery};
+    Types::ClientRequest create_streamer{std::move(query), Types::ClientRequestType::AddQuery};
     Types::ServerResponse response = send_request(create_streamer);
     assert(response.response_type == Types::ServerResponseType::PortNumber);
-    auto port_number = Internal::CerealSerializer<Types::PortNumber>::deserialize(
-      response.serialized_response_data);
+    auto port_number = Internal::CerealSerializer<Types::PortNumber>::deserialize(response.serialized_response_data);
     return port_number;
   }
 
