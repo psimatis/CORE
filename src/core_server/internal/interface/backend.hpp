@@ -112,8 +112,7 @@ class Backend {
     send_event_to_queries(stream_id, {std::make_shared<Types::Event>(event)});
   }
 
-  void send_event_to_queries(Types::StreamTypeId stream_id,
-                             const Types::EventWrapper&& event) {
+  void send_event_to_queries(Types::StreamTypeId stream_id, const Types::EventWrapper&& event) {
     ZoneScopedN("Backend::send_event_to_queries");
     LOG_L3_BACKTRACE(
       "Received event with id {} from stream with id {} in "

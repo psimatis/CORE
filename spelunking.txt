@@ -1,7 +1,10 @@
-To run:
+TODO: 
+Figure out how to call set_quarantine_policy to test the wait fixed time policy. 
+
+
+Run:
 1) docker compose up -d
 2) python run.py
-
 This executes offline.cpp
 
 
@@ -10,7 +13,37 @@ offline.cpp
   Sets up a server with the given command line arguments.
   Then it reads the query and declaration files (i.e., set up how the stream looks like).
   Then it sends the stream of events to the server.
-  
+
+core_client/client.hpp
+  seems to be the client that receives the events before they are sent to the server.
+
+core_server/library/server.hpp
+  receives the events and passes them to the offline_streams_listener
+
+core_server/library/components/stream_listeners/offline/offline_streams_listener.hpp
+  receives the events and passes them to the backend
+
+core_server/internal/interface/backend.hpp
+  receives the events and passes them to the quarantine_manager
+
+core_server/internal/interface/modules/quarantine/quarantiner.hpp
+  receives the events and passes them to the relevant policies
+
+core_server/internal/interface/modules/quarantine/quarantine_policies/base_policy.hpp
+  base policy is the interface for the policies
+  there are two policies:
+    - direct policy
+    - wait fixed time policy
+
+core_server/internal/interface/modules/quarantine/quarantine_policies/direct_policy.hpp
+  direct policy is the policy that sends the events to the queries
+
+core_server/internal/interface/modules/quarantine/quarantine_policies/wait_fixed_time_policy.hpp
+  wait fixed time policy is the policy that waits for a fixed time before sending the events to the queries
+  it keeps event sorted on the primary time
+
+
+
 
 Detailed usage:
 Usage: core [--help] [--version] [--webserver VAR] [--router VAR] [--stream_listener VAR] [--startingport VAR] --query VAR --declaration VAR [--options VAR] --csv VAR
@@ -37,3 +70,4 @@ BUY,1862,MSFT,573,26.1,30421941
 BUY,1861,MSFT,1300,26.1,30421944
 
 But the core+ little paper says the user can set the own timeseries.
+Then again looking at the quarantine policies it seems they dont support any order but they have a wait-for-a-certain-time policy.

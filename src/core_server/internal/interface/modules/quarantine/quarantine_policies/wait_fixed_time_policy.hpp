@@ -32,9 +32,7 @@ class WaitFixedTimePolicy : public BasePolicy {
   Types::IntValue last_time_sent = Types::IntValue::create_lower_bound();
 
  public:
-  WaitFixedTimePolicy(Catalog& catalog,
-                      std::atomic<Types::PortNumber>& next_available_inproc_port,
-                      std::chrono::duration<int64_t, std::nano> time_to_wait)
+  WaitFixedTimePolicy(Catalog& catalog, std::atomic<Types::PortNumber>& next_available_inproc_port, std::chrono::duration<int64_t, std::nano> time_to_wait)
       : BasePolicy(catalog, next_available_inproc_port), time_to_wait(time_to_wait) {
     this->start();
   }
@@ -59,11 +57,7 @@ class WaitFixedTimePolicy : public BasePolicy {
       return;
     }
 
-    events.insert(std::lower_bound(events.begin(),
-                                   events.end(),
-                                   event.get_primary_time().val,
-                                   is_nanoseconds_after_existing_event),
-                  std::move(event));
+    events.insert(std::lower_bound(events.begin(), events.end(), event.get_primary_time().val, is_nanoseconds_after_existing_event), std::move(event));
   }
 
  protected:
@@ -87,8 +81,7 @@ class WaitFixedTimePolicy : public BasePolicy {
           "WaitFixedTimePolicy::try_add_tuples_to_send",
           event.get_unique_event_type_id(),
           event.get_primary_time().val);
-        assert(event.get_primary_time().val >= last_time_sent.val
-               && "Event time is not after last time sent");
+        assert(event.get_primary_time().val >= last_time_sent.val && "Event time is not after last time sent");
         last_time_sent = event.get_primary_time();
         this->send_event_queue.enqueue(std::move(*iter));
         iter = events.erase(iter);
@@ -108,8 +101,7 @@ class WaitFixedTimePolicy : public BasePolicy {
   }
 
  private:
-  bool static is_nanoseconds_after_existing_event(const Types::EventWrapper& event_in_list,
-                                                  int64_t event_to_insert_time_nanoseconds) {
+  bool static is_nanoseconds_after_existing_event(const Types::EventWrapper& event_in_list, int64_t event_to_insert_time_nanoseconds) {
     return event_to_insert_time_nanoseconds >= event_in_list.get_primary_time().val;
   }
 };

@@ -27,14 +27,10 @@ class OfflineStreamsListener {
   OfflineStreamsListener& operator=(const OfflineStreamsListener&) = delete;
 
   void receive_stream(Types::Stream&& stream) {
-    LOG_L3_BACKTRACE("Received stream with id {} and {} events in OfflineStreamsListener",
-                     stream.id,
-                     stream.events.size());
+    LOG_L3_BACKTRACE("Received stream with id {} and {} events in OfflineStreamsListener", stream.id, stream.events.size());
     std::lock_guard lock(backend_mutex);
     for (const auto& event : stream.events) {
-      LOG_L3_BACKTRACE("Stream with id {} and event {} in OfflineStreamsListener",
-                       stream.id,
-                       event->to_string());
+      LOG_L3_BACKTRACE("Stream with id {} and event {} in OfflineStreamsListener", stream.id, event->to_string());
       backend.send_event_to_queries(stream.id, {std::move(event)});
     }
   }

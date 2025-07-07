@@ -84,15 +84,13 @@ class QuarantineManager {
     catalog.inactivate_query(query_id);
   }
 
-  void send_event_to_queries(Types::StreamTypeId stream_id,
-                             const Types::EventWrapper&& event) {
+  void send_event_to_queries(Types::StreamTypeId stream_id, const Types::EventWrapper&& event) {
     LOG_L3_BACKTRACE(
       "Received event with id {} from stream with id {} in "
       "QuarantineManager::send_event_to_queries",
       event.get_unique_event_type_id(),
       stream_id);
-    std::vector<std::reference_wrapper<BasePolicy>>&
-      relevant_policies = stream_type_id_to_relevant_policies[stream_id];
+    std::vector<std::reference_wrapper<BasePolicy>>& relevant_policies = stream_type_id_to_relevant_policies[stream_id];
 
     for (BasePolicy& relevant_policy : relevant_policies) {
       relevant_policy.receive_event(std::move(event.clone()));
