@@ -1,0 +1,32 @@
+ORDER EXPERIMENT RESULTS
+=====================
+Date: 2025-07-22 18:54:28
+Mode: remote
+Build: release
+
+Experiment                Input Events    Results    Time (s)   Events/s  
+---------------------------------------------------------------------------
+Unordered My Data         5               4          0.823s       6.1
+Ordered My Data           5               2          0.693s       7.2
+
+
+--- JSON DATA ---
+{
+  "timestamp": "2025-07-22T18:54:28.410410",
+  "mode": "remote",
+  "build": "release",
+  "experiments": [
+    {
+      "name": "Unordered My Data",
+      "input_events": 5,
+      "results": 4,
+      "execution_time": 0.8228075260000054
+    },
+    {
+      "name": "Ordered My Data",
+      "input_events": 5,
+      "results": 2,
+      "execution_time": 0.693124202000007
+    }
+  ]
+}

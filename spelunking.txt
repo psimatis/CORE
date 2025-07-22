@@ -7,6 +7,11 @@ Run:
 2) python run.py
 This executes offline.cpp
 
+or more nuclear:
+docker compose down
+docker compose build --no-cache // less safe docker compose build
+docker compose up -d
+
 
 Key files:
 offline.cpp

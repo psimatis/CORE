@@ -1,0 +1,40 @@
+ORDER EXPERIMENT LOG
+===================
+Date: 2025-07-22 18:54:26
+Mode: remote
+Build: release
+
+Running 2 experiments...
+
+
+================================================================================
+RUNNING: Unordered My Data
+================================================================================
+
+➜ docker compose run --rm -e TRACY_NO_INVARIANT_CHECK=1 -v /home/panos/Desktop/CER/Code/CORE:/workspace -w /workspace core-terminal /CORE/build/Release/offline --query /workspace/src/targets/experiments/my_data_unordered/query_1.txt --declaration /workspace/src/targets/experiments/my_data_unordered/declaration.core --csv /workspace/src/targets/experiments/my_data_unordered/my_data.csv
+Query: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+Read events 5
+[0,4], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [130 A 500 36.200000 4 ]) )
+[9,4], ((id: 0 attributes: [171 A 100 114.510000 9 ]) (id: 1 attributes: [130 A 500 36.200000 4 ]) )
+[0,7], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [171 A 100 114.510000 7 ]) )
+[9,7], ((id: 0 attributes: [171 A 100 114.510000 9 ]) (id: 1 attributes: [171 A 100 114.510000 7 ]) )
+
+================================================================================
+RUNNING: Ordered My Data
+================================================================================
+
+➜ docker compose run --rm -e TRACY_NO_INVARIANT_CHECK=1 -v /home/panos/Desktop/CER/Code/CORE:/workspace -w /workspace core-terminal /CORE/build/Release/offline --query /workspace/src/targets/experiments/my_data/query_1.txt --declaration /workspace/src/targets/experiments/my_data/declaration.core --csv /workspace/src/targets/experiments/my_data/my_data.csv
+Query: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+Read events 5
+[0,4], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [130 A 500 36.200000 4 ]) )
+[0,7], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [171 A 100 114.510000 7 ]) )

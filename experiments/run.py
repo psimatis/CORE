@@ -5,7 +5,9 @@ Usage:
 """
 import subprocess, sys, os, time, shlex
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+# Project root is two levels up from this script's location
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 MODE = (sys.argv[1].lower() if len(sys.argv) > 1 else "remote")
 BUILD = (sys.argv[2].lower() if len(sys.argv) > 2 else "release")
 DIR = "Debug" if BUILD == "debug" else "Release"
@@ -26,23 +28,28 @@ DIR = "Debug" if BUILD == "debug" else "Release"
 # CSV = "src/targets/experiments/smart_homes/smart_homes_data.csv"
 
 # My data
-QUERY = "src/targets/experiments/my_data/query_2.txt"
+QUERY = "src/targets/experiments/my_data/query_1.txt"
 DECL = "src/targets/experiments/my_data/declaration.core"
 CSV = "src/targets/experiments/my_data/my_data.csv"
 
+# Always resolve data file paths relative to the project root
+QUERY_PATH = os.path.join(PROJECT_ROOT, QUERY)
+DECL_PATH = os.path.join(PROJECT_ROOT, DECL)
+CSV_PATH = os.path.join(PROJECT_ROOT, CSV)
+
 IMG_REMOTE = "core-terminal"
 IMG_LOCAL = "core-dev"
-MOUNT_FLAGS = ["-v", f"{ROOT}:/workspace", "-w", "/workspace"]
+MOUNT_FLAGS = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]
 ENV_FLAG = ["-e", "TRACY_NO_INVARIANT_CHECK=1"]
 
-for f in (QUERY, DECL, CSV):
-    if not os.path.isfile(os.path.join(ROOT, f)):
-        sys.exit(f"❌ Missing: {f}")
+for f, f_path in zip(("QUERY", "DECL", "CSV"), (QUERY_PATH, DECL_PATH, CSV_PATH)):
+    if not os.path.isfile(f_path):
+        sys.exit(f"❌ Missing: {f_path}")
 
-CMD = [f"/CORE/build/{DIR}/offline", "--query", f"/workspace/{QUERY}","--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}"]
+CMD = [f"/CORE/build/{DIR}/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}"]
 
 def count_events(csv_path):
-    with open(os.path.join(ROOT, csv_path)) as f:
+    with open(csv_path) as f:
         return sum(1 for _ in f) - 1
 
 def run_timed(args):
@@ -66,6 +73,6 @@ else:
     num_results, elapsed = run_timed(cmd)
 
 print(f"\nSummary:")
-print(f"Number of input events : {count_events(CSV)}")
+print(f"Number of input events : {count_events(CSV_PATH)}")
 print(f"Number of results      : {num_results}")
 print(f"Query execution time   : {elapsed:.3f}s")

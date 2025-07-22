@@ -37,4 +37,4 @@ src/targets/experiments/taxis/benchmark.csv
 logfile.log
 .direnv
 
-logs/
+# logs/
