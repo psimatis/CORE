@@ -90,9 +90,12 @@ class QuarantineManager {
       "QuarantineManager::send_event_to_queries",
       event.get_unique_event_type_id(),
       stream_id);
+    std::cout << "QUARANTINE MANAGER: received event for stream " << stream_id << std::endl;
     std::vector<std::reference_wrapper<BasePolicy>>& relevant_policies = stream_type_id_to_relevant_policies[stream_id];
 
+    std::cout << "QUARANTINE MANAGER: found " << relevant_policies.size() << " policies for stream " << stream_id << std::endl;
     for (BasePolicy& relevant_policy : relevant_policies) {
+      std::cout << "QUARANTINE MANAGER: sending to policy" << std::endl;
       relevant_policy.receive_event(std::move(event.clone()));
     }
   }

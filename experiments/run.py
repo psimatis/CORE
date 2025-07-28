@@ -1,7 +1,7 @@
 """
 run.py – runs CORE (remote or local image).
 Usage:
-  python run.py [local|remote] [debug|release] [QUERY] [DECL] [CSV]
+  python run.py [local|remote] [debug|release] [QUERY] [DECL] [CSV] [OPTIONS]
 """
 import subprocess, sys, os, time, shlex
 
@@ -28,14 +28,16 @@ DIR = "Debug" if BUILD == "debug" else "Release"
 # CSV = "src/targets/experiments/smart_homes/smart_homes_data.csv"
 
 # My data
-QUERY = "src/targets/experiments/my_data/query_1.txt"
-DECL = "src/targets/experiments/my_data/declaration.core"
-CSV = "src/targets/experiments/my_data/my_data.csv"
+QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/my_data_unordered/query_1.txt"
+DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/my_data_unordered/declaration.core"
+CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/my_data_unordered/my_data.csv"
+OPTIONS = sys.argv[6] if len(sys.argv) > 6 else None  # Optional quarantine options file
 
 # Always resolve data file paths relative to the project root
 QUERY_PATH = os.path.join(PROJECT_ROOT, QUERY)
 DECL_PATH = os.path.join(PROJECT_ROOT, DECL)
 CSV_PATH = os.path.join(PROJECT_ROOT, CSV)
+OPTIONS_PATH = os.path.join(PROJECT_ROOT, OPTIONS) if OPTIONS else None
 
 IMG_REMOTE = "core-terminal"
 IMG_LOCAL = "core-dev"
@@ -46,7 +48,12 @@ for f, f_path in zip(("QUERY", "DECL", "CSV"), (QUERY_PATH, DECL_PATH, CSV_PATH)
     if not os.path.isfile(f_path):
         sys.exit(f"❌ Missing: {f_path}")
 
+if OPTIONS and not os.path.isfile(OPTIONS_PATH):
+    sys.exit(f"❌ Missing: {OPTIONS_PATH}")
+
 CMD = [f"/CORE/build/{DIR}/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}"]
+if OPTIONS:
+    CMD.extend(["--options", f"/workspace/{OPTIONS}"])
 
 def count_events(csv_path):
     with open(csv_path) as f:
@@ -68,7 +75,7 @@ if MODE == "remote":
 else:
     if subprocess.call(["docker", "image", "inspect", IMG_LOCAL], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
         print("Building local image (core-dev)…")
-        subprocess.run(["docker", "build", "--target", "build", "-t", IMG_LOCAL, "."], check=True)
+        subprocess.run(["docker", "build", "--target", "build", "-t", IMG_LOCAL, "."], check=True, cwd=PROJECT_ROOT)
     cmd = ["docker", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD]
     num_results, elapsed = run_timed(cmd)
 

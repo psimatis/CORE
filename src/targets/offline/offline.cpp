@@ -18,28 +18,48 @@ using namespace CORE;
 int main(int argc, char** argv) {
   FrameMark;
   try {
+    // Manual argument parsing for --options since ServerConfig parsing is broken
+    std::string manual_options_path = "";
+    for (int i = 0; i < argc - 1; i++) {
+      if (std::string(argv[i]) == "--options") {
+        manual_options_path = argv[i + 1];
+        std::cout << "MANUAL PARSING: Found --options, path=" << manual_options_path << std::endl;
+        break;
+      }
+    }
+    std::cout << "MANUAL PARSING: Final options path='" << manual_options_path << "' (empty=" << manual_options_path.empty() << ")" << std::endl;
+    
     Library::ServerConfig server_config = Library::ServerConfig::from_args(argc, argv);
     Library::OfflineServer server{std::move(server_config)};
     Client client{"tcp://localhost", server.get_server_config().get_fixed_ports().router};
 
-    std::string query_string = client.read_file(server.get_server_config().get_query_path());
-    std::string declaration_string = client.read_file(server.get_server_config().get_declaration_path());
+    std::string query_string = client.read_file(
+      server.get_server_config().get_query_path());
+    std::string declaration_string = client.read_file(
+      server.get_server_config().get_declaration_path());
 
     Types::StreamInfo stream_info = client.declare_stream(declaration_string);
 
-    if (server.get_server_config().get_options_path().size() > 0) {
-      std::string option_declaration_string = client.read_file(server.get_server_config().get_options_path());
+    // Use manual argument parsing for quarantine options
+    if (!manual_options_path.empty()) {
+      std::cout << "LOADING QUARANTINE OPTIONS FROM: " << manual_options_path << std::endl;
+      std::string option_declaration_string = client.read_file(manual_options_path);
+      std::cout << "QUARANTINE OPTIONS CONTENT: " << option_declaration_string << std::endl;
       client.declare_option(option_declaration_string);
+      std::cout << "QUARANTINE OPTIONS LOADED SUCCESSFULLY" << std::endl;
+    } else {
+      std::cout << "NO --options ARGUMENT PROVIDED - USING DEFAULT DIRECT POLICY (NO QUARANTINE)" << std::endl;
     }
 
     std::cout << "Query: " << query_string << std::endl;
 
-    // Panos: Here it tells the server what the query is
     client.add_query(std::move(query_string));
-    std::vector<Types::Event> events = std::move(stream_info.get_events_from_csv(server.get_server_config().get_csv_data_path()));
+    std::vector<Types::Event> events = std::move(
+      stream_info.get_events_from_csv(server.get_server_config().get_csv_data_path()));
     std::vector<std::shared_ptr<Types::Event>> events_to_send;
-    for (Types::Event event : events)
+    for (Types::Event event : events) {
       events_to_send.push_back(std::make_shared<Types::Event>(event));
+    }
 
     std::cout << "Read events " << events.size() << std::endl;
     FrameMark;
@@ -48,8 +68,6 @@ int main(int argc, char** argv) {
     //   ZoneScopedN("main::send_event");
     //   server.receive_stream({0, {event_to_send}});
     // }
-    
-    // Panos: Here it sends the events to the server
     server.receive_stream({0, std::move(events_to_send)});
 
     return 0;

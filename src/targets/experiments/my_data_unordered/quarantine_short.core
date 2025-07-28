@@ -1,0 +1,3 @@
+CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}

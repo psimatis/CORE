@@ -40,6 +40,7 @@ class WaitFixedTimePolicy : public BasePolicy {
   ~WaitFixedTimePolicy() { this->handle_destruction(); }
 
   void receive_event(Types::EventWrapper&& event) override {
+    std::cout << "QUARANTINE RECEIVE: event time=" << event.get_primary_time().val << std::endl;
     LOG_L3_BACKTRACE(
       "Received event with id {} and time {} in "
       "WaitFixedTimePolicy::receive_event",
@@ -49,6 +50,7 @@ class WaitFixedTimePolicy : public BasePolicy {
     std::lock_guard<std::mutex> lock(events_lock);
 
     if (event.get_primary_time().val < last_time_sent.val) {
+      std::cout << "QUARANTINE DROP: event time=" << event.get_primary_time().val << " < last_sent=" << last_time_sent.val << std::endl;
       LOG_L3_BACKTRACE(
         "Dropping event with id {} and time {} in "
         "WaitFixedTimePolicy::receive_event due to time being before last time sent",
@@ -58,6 +60,7 @@ class WaitFixedTimePolicy : public BasePolicy {
     }
 
     events.insert(std::lower_bound(events.begin(), events.end(), event.get_primary_time().val, is_nanoseconds_after_existing_event), std::move(event));
+    std::cout << "QUARANTINE SORTED: buffer size=" << events.size() << std::endl;
   }
 
  protected:
@@ -65,6 +68,7 @@ class WaitFixedTimePolicy : public BasePolicy {
    * Tries to add received tuples to send queue according to specific policy
    */
   void try_add_tuples_to_send_queue() override {
+    std::cout << "QUARANTINE TRY SEND: buffer size=" << events.size() << std::endl;
     LOG_L3_BACKTRACE(
       "Trying to add tuples to send queue in "
       "WaitFixedTimePolicy::try_add_tuples_to_send");
@@ -76,6 +80,7 @@ class WaitFixedTimePolicy : public BasePolicy {
       const Types::EventWrapper& event = *iter;
       auto duration = now - event.get_received_time();
       if (duration > time_to_wait) {
+        std::cout << "QUARANTINE SEND: event time=" << event.get_primary_time().val << std::endl;
         LOG_L3_BACKTRACE(
           "Adding event with id {} and time {} to send queue in "
           "WaitFixedTimePolicy::try_add_tuples_to_send",
@@ -94,7 +99,9 @@ class WaitFixedTimePolicy : public BasePolicy {
 
   void force_add_tuples_to_send_queue() override {
     std::lock_guard<std::mutex> lock(events_lock);
+    std::cout << "QUARANTINE FORCE SEND: flushing " << events.size() << " remaining events" << std::endl;
     for (auto iter = events.begin(); iter != events.end();) {
+      std::cout << "QUARANTINE FORCE SEND EVENT: time=" << iter->get_primary_time().val << std::endl;
       this->send_event_queue.enqueue(std::move(*iter));
       iter = events.erase(iter);
     }
