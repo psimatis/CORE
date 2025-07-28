@@ -1,8 +1,10 @@
+#include <chrono>
 #include <exception>
 #include <iostream>
 #include <memory>
 #include <ostream>
 #include <string>
+#include <thread>
 #include <tracy/Tracy.hpp>
 #include <utility>
 #include <vector>
@@ -64,11 +66,22 @@ int main(int argc, char** argv) {
     std::cout << "Read events " << events.size() << std::endl;
     FrameMark;
 
-    // for (Types::Event event_to_send : reader.events) {
-    //   ZoneScopedN("main::send_event");
-    //   server.receive_stream({0, {event_to_send}});
-    // }
-    server.receive_stream({0, std::move(events_to_send)});
+    // Send events one by one with delays to trigger temporal violations
+    std::cout << "STREAMING MODE: Sending events with 2-second delays..." << std::endl;
+    for (size_t i = 0; i < events_to_send.size(); i++) {
+      std::cout << "STREAMING: Sending event " << i << std::endl;
+      
+      std::vector<std::shared_ptr<Types::Event>> single_event = {events_to_send[i]};
+      server.receive_stream({0, std::move(single_event)});
+      
+      // Wait 2 seconds before sending next event (except for last one)
+      if (i < events_to_send.size() - 1) {
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+      }
+    }
+    
+    std::cout << "STREAMING: All events sent, waiting for final processing..." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
 
     return 0;
   }

@@ -68,7 +68,7 @@ class WaitFixedTimePolicy : public BasePolicy {
    * Tries to add received tuples to send queue according to specific policy
    */
   void try_add_tuples_to_send_queue() override {
-    std::cout << "QUARANTINE TRY SEND: buffer size=" << events.size() << std::endl;
+    // std::cout << "QUARANTINE TRY SEND: buffer size=" << events.size() << std::endl;
     LOG_L3_BACKTRACE(
       "Trying to add tuples to send queue in "
       "WaitFixedTimePolicy::try_add_tuples_to_send");

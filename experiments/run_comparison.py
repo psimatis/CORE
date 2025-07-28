@@ -16,7 +16,9 @@ DIR = "Debug" if BUILD == "debug" else "Release"
 QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/my_data_unordered/query_1.txt"
 DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/my_data_unordered/declaration.core"
 CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/my_data_unordered/my_data.csv"
-OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/my_data_unordered/quarantine_wait.core"
+# OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/my_data_unordered/quarantine_wait.core"
+OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/my_data_unordered/quarantine_short.core"
+
 
 # Always resolve data file paths relative to the project root
 QUERY_PATH = os.path.join(PROJECT_ROOT, QUERY)
