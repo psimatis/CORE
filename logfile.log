@@ -1224,3 +1224,464 @@ FILTER A[name = 'A']
 WITHIN 3 [stock_time]
 CONSUME BY NONE
 ' in ClientMessageHandler::add_query
+02:19:34.926320115 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:19:34.926618658 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:19:34.927046561 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:20:58.933740286 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:20:58.934864871 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:20:58.934986022 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:20:58.934986202 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:20:59.608047683 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:20:59.608422304 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:20:59.608525330 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:20:59.608525605 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:21:23.827164576 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:21:23.827805930 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:21:23.827970818 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:21:23.827971436 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:21:24.543420602 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:21:24.543734618 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:21:24.544151383 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:21:24.544151693 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:21:37.339488522 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:21:37.339884093 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:21:37.340241453 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:21:37.340241727 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:21:44.068192289 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:21:44.068504788 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:21:44.068754779 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:21:44.068754966 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:21:44.780219567 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:21:44.780544910 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:21:44.780886861 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:21:44.780887181 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:23:20.452312246 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:23:20.452619001 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:23:20.452977848 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:23:20.452978031 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:23:21.148922128 [12] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:23:21.149283301 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:23:21.149437810 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:23:21.149438088 [12] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:25:07.418048418 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:25:07.418397487 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:25:07.418642388 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:25:07.418642586 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:25:08.090232973 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:25:08.090945421 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:25:08.091048318 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:25:08.091048643 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:26:12.509385414 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:26:12.510134342 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:26:12.510514279 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:26:12.510514469 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:26:13.203246115 [12] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:26:13.203889440 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:26:13.204093965 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:26:13.204094475 [12] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:28:09.489294669 [13] backend.hpp:83               LOG_INFO Parsing stream info: CREATE STREAM S {
+EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+}
+
+02:28:09.489661536 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:28:09.490082573 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:28:09.490082897 [13] backend.hpp:88               LOG_INFO Parsing query info: SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+
+02:31:56.718107531 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:31:56.718497136 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:31:56.718918660 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:32:41.713352379 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:32:41.713869128 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:32:41.714631346 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:34:40.162975646 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:34:40.163449753 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:34:40.164146334 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:47:30.192384219 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:47:30.192682501 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:47:30.193252610 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:50:16.720507604 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:50:16.720937094 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:50:16.721581548 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:50:51.007956110 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:50:51.008400038 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:50:51.008747579 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:54:36.061573925 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:54:36.061850449 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:54:36.062248405 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:55:33.715215153 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:55:33.716023105 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:55:33.716455410 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:57:55.206622402 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:57:55.206944341 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:57:55.207321714 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:58:47.234297337 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:58:47.234682061 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:58:47.235202824 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+02:59:35.604603869 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+02:59:35.605164246 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+02:59:35.605857749 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+03:02:48.099144635 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+03:02:48.099437253 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+03:02:48.099728737 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+03:16:43.222906917 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+03:16:43.223634153 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+03:16:43.224548536 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+03:29:29.850063244 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+03:29:29.850269748 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+03:29:29.850566524 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query

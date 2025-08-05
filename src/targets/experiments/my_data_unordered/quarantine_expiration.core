@@ -1,3 +1,0 @@
-CREATE QUARANTINE {
-FIXED_TIME 5 seconds {S}
-}

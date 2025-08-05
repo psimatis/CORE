@@ -1,11 +1,14 @@
 """
-order_experiment.py – runs CORE with stocks and unordered stocks datasets and compares processing metrics.
+This experiment executes CORE on ordered and unordered data to compare the results.
+It logs both in files and the console.
+
+data_order_experiment.py – runs CORE with stocks and unordered stocks datasets and compares processing metrics.
 Usage:
-  python order_experiment.py [local|remote] [debug|release]
+  python data_order_experiment.py [local|remote] [debug|release]
   
   Compares ordered vs unordered data processing performance.
 """
-import subprocess, sys, os, time, shlex, datetime, json
+import subprocess, sys, os, datetime, json, shlex, time
 
 # Project root is two levels up from this script's location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -39,12 +42,13 @@ IMG_REMOTE = "core-terminal"
 IMG_LOCAL = "core-dev"
 ENV_FLAG = ["-e", "TRACY_NO_INVARIANT_CHECK=1"]
 
+
 def count_events(csv_path):
     with open(csv_path) as f:
         return sum(1 for _ in f) - 1
 
+
 def run_timed(args, console_log_file=None):
-    import subprocess, shlex, time
     cmd_str = " ".join(shlex.quote(a) for a in args)
     print("➜", cmd_str)
 
@@ -116,6 +120,7 @@ def run_experiment(experiment, console_log_file=None):
         "execution_time": elapsed
     }
 
+
 if __name__ == "__main__":
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     
@@ -127,7 +132,6 @@ if __name__ == "__main__":
     run_dir = os.path.join(logs_dir, f"experiment_{timestamp}")
     os.makedirs(run_dir, exist_ok=True)
     
-    # Set up log files
     console_log = os.path.join(run_dir, "console.log")
     summary_log = os.path.join(run_dir, "summary.log")
     

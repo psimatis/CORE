@@ -1,7 +1,9 @@
 """
-run.py – runs CORE (remote or local image).
+Simply runs CORE.
+
+single_experiment.py – runs CORE (remote or local image).
 Usage:
-  python run.py [local|remote] [debug|release] [QUERY] [DECL] [CSV] [OPTIONS]
+  python single_experiment.py [local|remote] [debug|release] [QUERY] [DECL] [CSV] [OPTIONS]
 """
 import subprocess, sys, os, time, shlex
 
