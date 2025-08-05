@@ -1,5 +1,5 @@
 """
-Test if WAIT quarantine policy actually reorders events by timestamp.
+Compare the behavior of the quarantine policies.
 
 Usage:
   python quarantine_experiment.py
@@ -9,7 +9,6 @@ import subprocess, os, shlex, re, csv
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 
-# Data
 QUERY = "src/targets/experiments/my_data_unordered/query_1.txt"
 DECL = "src/targets/experiments/my_data_unordered/declaration.core"
 CSV = "src/targets/experiments/my_data_unordered/my_data.csv"
@@ -18,8 +17,8 @@ OPTIONS = "src/targets/experiments/my_data_unordered/quarantine_wait.core"
 IMG_LOCAL = "core-dev"
 MOUNT_FLAGS = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]
 ENV_FLAG = ["-e", "TRACY_NO_INVARIANT_CHECK=1"]
+CMD_WITHOUT_QUARANTINE = [f"/CORE/build/Release/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}"]
 CMD_WITH_QUARANTINE = [f"/CORE/build/Release/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}", "--options", f"/workspace/{OPTIONS}"]
-
 
 def read_event_order(csv_path):
     csv_order = []
@@ -30,9 +29,10 @@ def read_event_order(csv_path):
     return csv_order
 
 
-def extract_event_order(output):
+def extract_events(output):
     received_order = []
     sent_order = []
+    complex_events = []
     
     for line in output.splitlines():
         if "QUARANTINE RECEIVE: event time=" in line:
@@ -44,8 +44,15 @@ def extract_event_order(output):
             match = re.search(r"time=(\d+)", line)
             if match:
                 sent_order.append(int(match.group(1)))
+        
+        # Extract complex events (query results)
+        if line.strip().startswith('[') and '], ((' in line:
+            match = re.search(r'^\[(\d+),(\d+)\],', line.strip())
+            if match:
+                time1, time2 = int(match.group(1)), int(match.group(2))
+                complex_events.append([time1, time2])
                     
-    return received_order, sent_order
+    return received_order, sent_order, complex_events
 
 
 def run_test(description, cmd):
@@ -60,9 +67,10 @@ def run_test(description, cmd):
     for line in result.stdout.splitlines():
         print(f"  {line}")
     
-    received_order, sent_order = extract_event_order(result.stdout)
+    received_order, sent_order, complex_events = extract_events(result.stdout)
     print(f"📥 Events RECEIVED by quarantine: {received_order}")
     print(f"📤 Events SENT by quarantine:     {sent_order}")
+    print(f"🔍 Complex events found: {complex_events}")
     
     if received_order != sent_order:
         print(f"✅ REORDERING DETECTED: Events were reordered from {received_order} to {sent_order}")
@@ -71,24 +79,34 @@ def run_test(description, cmd):
     else:
         print(f"❌ NO REORDERING: Events sent in same order as received")
     
-    return received_order, sent_order
+    return received_order, sent_order, complex_events
 
 
 if __name__ == "__main__":
-    event_order = read_event_order(os.path.join(PROJECT_ROOT, CSV))
-    
     if subprocess.call(["docker", "image", "inspect", IMG_LOCAL], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
         print("Building local image (core-dev)…")
         subprocess.run(["docker", "build", "--target", "build", "-t", IMG_LOCAL, "."], check=True, cwd=PROJECT_ROOT)
 
-    # Test with WAIT quarantine policy
-    cmd = ["docker", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITH_QUARANTINE]
-    received, sent = run_test("WAIT Quarantine Policy", cmd)
+    cmd_direct = ["docker", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITHOUT_QUARANTINE]
+    received_direct, sent_direct, events_direct = run_test("DIRECT Policy (No Quarantine)", cmd_direct)
 
-    # Summary
-    print(f"\n📊 REORDERING ANALYSIS")
-    print(f"Original event order:   {event_order}")
-    print(f"Quarantine received:    {received}")
-    print(f"Quarantine sent:        {sent}")
-    print(f"Expected chronological: {sorted(event_order)}")
-    print(f"")
+    cmd_wait = ["docker", "run", "--rm", *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITH_QUARANTINE]
+    received_wait, sent_wait, events_wait = run_test("WAIT Quarantine Policy", cmd_wait)
+
+    # Comparison Summary
+    event_order = read_event_order(os.path.join(PROJECT_ROOT, CSV))
+    print(f"\n📊 POLICY COMPARISON")
+    print(f"Original event order:     {event_order}")
+    print(f"Chronological order:   {sorted(event_order)}\n")
+
+    print(f"DIRECT Policy:")
+    print(f"  Received: {received_direct}")
+    print(f"  Sent:     {sent_direct}")
+    print(f"  Complex events: {events_direct}")
+    print(f"  Reordered: {'✅ YES' if received_direct != sent_direct else '❌ NO'}\n")
+
+    print(f"WAIT Policy:")
+    print(f"  Received: {received_wait}")
+    print(f"  Sent:     {sent_wait}")
+    print(f"  Complex events: {events_wait}")
+    print(f"  Reordered: {'✅ YES' if received_wait != sent_wait else '❌ NO'}")

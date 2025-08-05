@@ -1,0 +1,139 @@
+Building local image (core-dev)…
+
+============================================================
+🔬 DIRECT Policy (No Quarantine)
+============================================================
+➜ docker run --rm -e TRACY_NO_INVARIANT_CHECK=1 -v /home/panos/Desktop/CER/Code/CORE:/workspace -w /workspace core-dev /CORE/build/Release/offline --query /workspace/src/targets/experiments/my_data_unordered/query_1.txt --declaration /workspace/src/targets/experiments/my_data_unordered/declaration.core --csv /workspace/src/targets/experiments/my_data_unordered/my_data.csv
+
+🔍 Debug output:
+  MANUAL PARSING: Final options path='' (empty=1)
+  NO --options ARGUMENT PROVIDED - USING DEFAULT DIRECT POLICY (NO QUARANTINE)
+  Query: SELECT * FROM S
+  WHERE (BUY as A; SELL as A)
+  FILTER A[name = 'A']
+  WITHIN 10 [stock_time]
+  CONSUME BY NONE
+  
+  Read events 5
+  STREAMING MODE: Sending events with 2-second delays...
+  STREAMING: Sending event 0
+  OFFLINE LISTENER: sending event time=9 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  STREAMING: Sending event 1
+  OFFLINE LISTENER: sending event time=0 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  STREAMING: Sending event 2
+  OFFLINE LISTENER: sending event time=4 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  [0,4], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [130 A 500 36.200000 4 ]) )
+  STREAMING: Sending event 3
+  OFFLINE LISTENER: sending event time=7 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  [0,7], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [171 A 100 114.510000 7 ]) )
+  STREAMING: Sending event 4
+  OFFLINE LISTENER: sending event time=20 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  STREAMING: All events sent, waiting for final processing...
+📥 Events RECEIVED by quarantine: []
+📤 Events SENT by quarantine:     []
+🔍 Complex events found: [[0, 4], [0, 7]]
+❌ NO REORDERING: Events sent in same order as received
+
+============================================================
+🔬 WAIT Quarantine Policy
+============================================================
+➜ docker run --rm -e TRACY_NO_INVARIANT_CHECK=1 -v /home/panos/Desktop/CER/Code/CORE:/workspace -w /workspace core-dev /CORE/build/Release/offline --query /workspace/src/targets/experiments/my_data_unordered/query_1.txt --declaration /workspace/src/targets/experiments/my_data_unordered/declaration.core --csv /workspace/src/targets/experiments/my_data_unordered/my_data.csv --options /workspace/src/targets/experiments/my_data_unordered/quarantine_wait.core
+
+🔍 Debug output:
+  MANUAL PARSING: Found --options, path=/workspace/src/targets/experiments/my_data_unordered/quarantine_wait.core
+  MANUAL PARSING: Final options path='/workspace/src/targets/experiments/my_data_unordered/quarantine_wait.core' (empty=0)
+  LOADING QUARANTINE OPTIONS FROM: /workspace/src/targets/experiments/my_data_unordered/quarantine_wait.core
+  QUARANTINE OPTIONS CONTENT: CREATE QUARANTINE {
+  FIXED_TIME 5 seconds {S}
+  }
+  
+  QUARANTINE OPTIONS LOADED SUCCESSFULLY
+  Query: SELECT * FROM S
+  WHERE (BUY as A; SELL as A)
+  FILTER A[name = 'A']
+  WITHIN 10 [stock_time]
+  CONSUME BY NONE
+  
+  Read events 5
+  STREAMING MODE: Sending events with 2-second delays...
+  STREAMING: Sending event 0
+  OFFLINE LISTENER: sending event time=9 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  QUARANTINE RECEIVE: event time=9
+  QUARANTINE SORTED: buffer size=1
+  STREAMING: Sending event 1
+  OFFLINE LISTENER: sending event time=0 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  QUARANTINE RECEIVE: event time=0
+  QUARANTINE SORTED: buffer size=2
+  STREAMING: Sending event 2
+  OFFLINE LISTENER: sending event time=4 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  QUARANTINE RECEIVE: event time=4
+  QUARANTINE SORTED: buffer size=3
+  STREAMING: Sending event 3
+  OFFLINE LISTENER: sending event time=7 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  QUARANTINE RECEIVE: event time=7
+  QUARANTINE SORTED: buffer size=4
+  QUARANTINE SEND: event time=0
+  STREAMING: Sending event 4
+  OFFLINE LISTENER: sending event time=20 to quarantine
+  QUARANTINE MANAGER: received event for stream 0
+  QUARANTINE MANAGER: found 1 policies for stream 0
+  QUARANTINE MANAGER: sending to policy
+  QUARANTINE RECEIVE: event time=20
+  QUARANTINE SORTED: buffer size=4
+  STREAMING: All events sent, waiting for final processing...
+  QUARANTINE SEND: event time=4
+  [0,4], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [130 A 500 36.200000 4 ]) )
+  QUARANTINE SEND: event time=7
+  QUARANTINE SEND: event time=9
+  [0,7], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [171 A 100 114.510000 7 ]) )
+  [0,9], ((id: 0 attributes: [8 A 100 27.850000 0 ]) (id: 1 attributes: [171 A 100 114.510000 9 ]) )
+  QUARANTINE FORCE SEND: flushing 1 remaining events
+  QUARANTINE FORCE SEND EVENT: time=20
+📥 Events RECEIVED by quarantine: [9, 0, 4, 7, 20]
+📤 Events SENT by quarantine:     [0, 4, 7, 9, 20]
+🔍 Complex events found: [[0, 4], [0, 7], [0, 9]]
+✅ REORDERING DETECTED: Events were reordered from [9, 0, 4, 7, 20] to [0, 4, 7, 9, 20]
+✅ CORRECT ORDERING: Events sent in chronological order
+
+📊 POLICY COMPARISON
+Original event order:     [9, 0, 4, 7, 20]
+Chronological order:   [0, 4, 7, 9, 20]
+
+DIRECT Policy:
+  Received: []
+  Sent:     []
+  Complex events: [[0, 4], [0, 7]]
+  Reordered: ❌ NO
+
+WAIT Policy:
+  Received: [9, 0, 4, 7, 20]
+  Sent:     [0, 4, 7, 9, 20]
+  Complex events: [[0, 4], [0, 7], [0, 9]]
+  Reordered: ✅ YES
