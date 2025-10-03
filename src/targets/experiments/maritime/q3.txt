@@ -1,0 +1,5 @@
+SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE

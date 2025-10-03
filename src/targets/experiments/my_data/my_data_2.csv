@@ -1,0 +1,7 @@
+event_type,id,name,volume,price,stock_time
+SELL,130,A,500,36.2,4
+SELL,171,A,100,114.51,9
+BUY,8,A,100,27.85,15
+SELL,171,A,100,114.51,16
+SELL,171,A,100,114.51,20
+SELL,34,A,100,123,26

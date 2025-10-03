@@ -14,6 +14,9 @@ RUN apt-get update && \
     wget \
     git \
     cmake \
+    build-essential \         
+    pkg-config \              
+    libssl-dev \              
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Clang 19

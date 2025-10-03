@@ -40,3 +40,12 @@ src/targets/experiments/taxis/benchmark.csv
 # logs/
 
 # afti einai mia allagi
+src/targets/experiments/maritime.zip
+src/targets/experiments/maritime/120.csv
+.gitignore
+src/targets/experiments/maritime/300.csv
+src/targets/experiments/maritime/70000.csv
+.gitignore
+src/targets/experiments/maritime/100000.csv
+src/targets/experiments/maritime/new_imis.csv
+src/targets/experiments/maritime/test.csv

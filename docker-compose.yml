@@ -1,5 +1,6 @@
 services:
   core-terminal:
+    platform: linux/amd64
     image: crivero1/cer-core
     build:
       context: .

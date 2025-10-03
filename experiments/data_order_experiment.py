@@ -41,7 +41,7 @@ EXPERIMENTS = [
 IMG_REMOTE = "core-terminal"
 IMG_LOCAL = "core-dev"
 ENV_FLAG = ["-e", "TRACY_NO_INVARIANT_CHECK=1"]
-
+PLATFORM_FLAG = ["--platform", "linux/amd64"]
 
 def count_events(csv_path):
     with open(csv_path) as f:
@@ -98,7 +98,7 @@ def run_experiment(experiment, console_log_file=None):
     mount_flags = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]
     core_args = ["/CORE/build/" + DIR + "/offline", "--query", query_container, "--declaration", declaration_container, "--csv", csv_container]
     if MODE == "remote":
-        docker_cmd = ["docker", "compose", "run", "--rm", *ENV_FLAG, *mount_flags, IMG_REMOTE, *core_args]
+        docker_cmd = ["docker", "compose", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *mount_flags, IMG_REMOTE, *core_args]
         num_results, elapsed = run_timed(docker_cmd, console_log_file)
     else:
         if subprocess.call(["docker", "image", "inspect", IMG_LOCAL], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
@@ -106,8 +106,8 @@ def run_experiment(experiment, console_log_file=None):
             if console_log_file:
                 with open(console_log_file, 'a') as f:
                     f.write("Building local image (core-dev)…\n")
-            subprocess.run(["docker", "build", "--target", "build", "-t", IMG_LOCAL, "."], check=True, cwd=PROJECT_ROOT)
-        docker_cmd = ["docker", "run", "--rm", *ENV_FLAG, *mount_flags, IMG_LOCAL, *core_args]
+            subprocess.run(["docker", "buildx", "build", *PLATFORM_FLAG,"--target", "build", "-t", IMG_LOCAL, "."], check=True, cwd=PROJECT_ROOT)
+        docker_cmd = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *mount_flags, IMG_LOCAL, *core_args]
         num_results, elapsed = run_timed(docker_cmd, console_log_file)
     
     # Calculate metrics

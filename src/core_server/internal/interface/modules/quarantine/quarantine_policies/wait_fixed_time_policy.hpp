@@ -88,6 +88,7 @@ class WaitFixedTimePolicy : public BasePolicy {
           event.get_primary_time().val);
         assert(event.get_primary_time().val >= last_time_sent.val && "Event time is not after last time sent");
         last_time_sent = event.get_primary_time();
+        std::cout << "- - -THIS IS A TEST !!! =" << last_time_sent.val << std::endl;
         this->send_event_queue.enqueue(std::move(*iter));
         iter = events.erase(iter);
       } else {

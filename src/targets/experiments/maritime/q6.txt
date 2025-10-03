@@ -1,0 +1,7 @@
+SELECT * FROM S
+WHERE ((entersArea OR leavesArea OR coord OR gap_end OR velocity 
+    OR gap_start OR change_in_heading OR proximity OR change_in_speed_start OR stop_start
+    OR stop_end OR slow_motion_start OR change_in_speed_end OR slow_motion_end) as A)
+FILTER A[Vessel_ID = 271043058]
+WITHIN 300000 [Time_A]
+CONSUME BY NONE

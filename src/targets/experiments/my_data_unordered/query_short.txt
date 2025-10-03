@@ -1,0 +1,5 @@
+SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 3 [stock_time]
+CONSUME BY NONE

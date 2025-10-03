@@ -1,0 +1,5 @@
+SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE
