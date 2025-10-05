@@ -9,10 +9,11 @@ import subprocess, os, shlex, re, csv
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 
-QUERY = "src/targets/experiments/my_data_unordered/query_1.txt"
-DECL = "src/targets/experiments/my_data_unordered/declaration.core"
-CSV = "src/targets/experiments/my_data_unordered/my_data.csv"
-OPTIONS = "src/targets/experiments/my_data_unordered/quarantine_wait.core"
+QUERY = "src/targets/experiments/maritime/q2.txt"
+DECL = "src/targets/experiments/maritime/maritime.core"
+CSV = "src/targets/experiments/maritime/100000.csv"
+OPTIONS = "src/targets/experiments/maritime/quarantine2.core"
+
 
 IMG_LOCAL = "core-dev"
 MOUNT_FLAGS = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]
@@ -25,7 +26,7 @@ def read_event_order(csv_path):
     with open(csv_path, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            csv_order.append(int(row['stock_time']))
+            csv_order.append(int(row['Time_A']))
     return csv_order
 
 
@@ -110,3 +111,4 @@ if __name__ == "__main__":
     print(f"  Sent:     {sent_wait}")
     print(f"  Complex events: {events_wait}")
     print(f"  Reordered: {'✅ YES' if received_wait != sent_wait else '❌ NO'}")
+    print(f"🔍 Number of complex events found: {len(events_wait)}")

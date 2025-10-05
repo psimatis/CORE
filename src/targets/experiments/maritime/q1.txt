@@ -1,5 +1,5 @@
 SELECT * FROM S
-WHERE change_in_heading; change_in_speed_start
+WHERE gap_end; gap_end
 PARTITION BY [Vessel_ID]
-WITHIN 5 [Time_A]
+WITHIN 5000 [Start_Time]
 CONSUME BY NONE

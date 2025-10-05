@@ -10,8 +10,8 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 MODE = sys.argv[1] if len(sys.argv) > 1 else "direct"
 BUILD = (sys.argv[2].lower() if len(sys.argv) > 2 else "release")
 QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/maritime/q1.txt"
-DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/maritime/maritime.core"
-CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/maritime/300.csv"
+DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/maritime/final_maritime.core"
+CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/maritime/test.csv"
 OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/maritime/quarantine2.core"
 
 DIR = "Debug" if BUILD == "debug" else "Release"
@@ -22,6 +22,7 @@ IMG_LOCAL = "core-dev"
 
 CSV_PATH = os.path.join(PROJECT_ROOT, CSV)
 QUERY_PATH = os.path.join(PROJECT_ROOT, QUERY)
+OPTIONS_PATH = os.path.join(PROJECT_ROOT, OPTIONS)
 CMD_WITHOUT_QUARANTINE = [f"/CORE/build/{DIR}/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}"]
 CMD_WITH_QUARANTINE = [f"/CORE/build/{DIR}/offline", "--query", f"/workspace/{QUERY}", "--declaration", f"/workspace/{DECL}", "--csv", f"/workspace/{CSV}", "--options", f"/workspace/{OPTIONS}"]
 
@@ -59,25 +60,38 @@ def run_test(description, cmd, query_contents):
     print(f"🔬 {description}")
     print(f"{'='*60}")
     print("➜", " ".join(shlex.quote(a) for a in cmd))
-    if MODE == "direct":
-        print("\nQuery:\n  " + query_contents)
+    print("\nQuery:\n  " + query_contents)
+
     
     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-    
-    print("\n🔍 Results:")
+
+    if MODE == "direct":
+        log_file = open(os.path.join(PROJECT_ROOT, "logs/logfile_experiment_direct.log"), "w")
+    elif MODE == "wait":
+        #print("\nQuarantine fixed time:\n  " + options_contents)
+        quarantine_file = open(os.path.join(PROJECT_ROOT, "logs/logfile_quarantine.log"), "w")
+        result_log_file = open(os.path.join(PROJECT_ROOT, "logs/logfile_experiment_wait.log"), "w")
+
     for line in result.stdout.splitlines():
         if line.startswith('[') and MODE == "direct":
-            print(f"  {line.split(') )')[0]}" + ") )")
-        #elif MODE == "wait":
-        #    print(f"  {line}")
+            log_file.write(f"{line.split(') )')[0]}" + ") )\n")
+        elif MODE == "wait":
+            if line.startswith("STREAMING"):
+                quarantine_file.write(f"\n{line}\n")
+            elif line.startswith('['):
+                result_log_file.write(f"{line.split(') )')[0]}" + ") )\n")
+            else:
+                quarantine_file.write(f"{line}\n")
     
     if MODE == "direct":
         num_results = sum(1 for line in result.stdout.splitlines() if line.strip().startswith('['))
         return num_results
     
     received_order, sent_order, complex_events = extract_events(result.stdout)
+    print("\n🦠 Quarantine Results:")
     print(f"📥 Number of events RECEIVED by quarantine: {len(received_order)}")
     print(f"📤 Number of events SENT by quarantine:     {len(sent_order)}")
+    print(f"🗑️  Number of events DROPPED by quarantine:  {len(received_order)-len(sent_order)}")
     print(f"🔍 Number of complex events found: {len(complex_events)}")
     
     if received_order != sent_order:
@@ -101,12 +115,15 @@ if __name__ == "__main__":
     with open(QUERY_PATH, 'r') as f:
         query_contents = '  '.join(line.strip() + '\n' for line in f)
 
+    with open(OPTIONS_PATH, 'r') as f:
+        options_contents = '  '.join(line.strip() + '\n' for line in f)
+
     if MODE == "direct":
         cmd_direct = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITHOUT_QUARANTINE]
         t0 = time.perf_counter()
         num_results = run_test("DIRECT Policy (No Quarantine)", cmd_direct, query_contents)
         elapsed = time.perf_counter() - t0
-        print(f"\nSummary:")
+        print("\n🔍 Results:")
         print(f"Number of input events : {count_events(CSV_PATH)}")
         print(f"Number of results      : {num_results}")
         print(f"Query execution time   : {elapsed:.3f}s")
@@ -116,8 +133,9 @@ if __name__ == "__main__":
         t0 = time.perf_counter()
         received_wait, sent_wait, events_wait = run_test("WAIT Quarantine Policy", cmd_wait, query_contents)
         elapsed = time.perf_counter() - t0
-        print(f"\nSummary:")
+        print("\n🔍 Results:")
         print(f"Number of input events : {count_events(CSV_PATH)}")
         print(f"Number of results      : {len(events_wait)}")
         print(f"Query execution time   : {elapsed:.3f}s")
+        print(f"Query throughput       : {len(events_wait) / elapsed:.2f} results/sec")
 

@@ -1,0 +1,108 @@
+MANUAL PARSING: Found --options, path=/workspace/src/targets/experiments/maritime/quarantine2.core
+MANUAL PARSING: Final options path='/workspace/src/targets/experiments/maritime/quarantine2.core' (empty=0)
+LOADING QUARANTINE OPTIONS FROM: /workspace/src/targets/experiments/maritime/quarantine2.core
+QUARANTINE OPTIONS CONTENT: CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+
+QUARANTINE OPTIONS LOADED SUCCESSFULLY
+Query: SELECT * FROM S
+WHERE gap_end; gap_end
+PARTITION BY [Vessel_ID]
+WITHIN 5000 [Start_Time]
+CONSUME BY NONE
+
+Read events 10
+
+STREAMING: Sending event 0
+OFFLINE LISTENER: sending event time=1451606401 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606401
+QUARANTINE SORTED: buffer size=1
+
+STREAMING: Sending event 1
+OFFLINE LISTENER: sending event time=1451606401 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606401
+QUARANTINE SORTED: buffer size=2
+
+STREAMING: Sending event 2
+OFFLINE LISTENER: sending event time=1451606401 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606401
+QUARANTINE SORTED: buffer size=3
+
+STREAMING: Sending event 3
+OFFLINE LISTENER: sending event time=1451606405 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606405
+QUARANTINE SORTED: buffer size=4
+
+STREAMING: Sending event 4
+OFFLINE LISTENER: sending event time=1451606405 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606405
+QUARANTINE SORTED: buffer size=5
+
+STREAMING: Sending event 5
+OFFLINE LISTENER: sending event time=1451606405 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451606405
+QUARANTINE SORTED: buffer size=6
+
+STREAMING: Sending event 6
+OFFLINE LISTENER: sending event time=1451608016 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451608016
+QUARANTINE SORTED: buffer size=7
+
+STREAMING: Sending event 7
+OFFLINE LISTENER: sending event time=1451608016 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451608016
+QUARANTINE SORTED: buffer size=8
+
+STREAMING: Sending event 8
+OFFLINE LISTENER: sending event time=1451608020 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451608020
+QUARANTINE SORTED: buffer size=9
+
+STREAMING: Sending event 9
+OFFLINE LISTENER: sending event time=1451608016 to quarantine
+QUARANTINE MANAGER: received event for stream 0
+QUARANTINE MANAGER: found 1 policies for stream 0
+QUARANTINE MANAGER: sending to policy
+QUARANTINE RECEIVE: event time=1451608016
+QUARANTINE SORTED: buffer size=10
+
+STREAMING: All events sent, waiting for final processing...
+QUARANTINE FORCE SEND: flushing 10 remaining events
+QUARANTINE FORCE SEND EVENT: time=1451606401
+QUARANTINE FORCE SEND EVENT: time=1451606401
+QUARANTINE FORCE SEND EVENT: time=1451606401
+QUARANTINE FORCE SEND EVENT: time=1451606405
+QUARANTINE FORCE SEND EVENT: time=1451606405
+QUARANTINE FORCE SEND EVENT: time=1451606405
+QUARANTINE FORCE SEND EVENT: time=1451608016
+QUARANTINE FORCE SEND EVENT: time=1451608016
+QUARANTINE FORCE SEND EVENT: time=1451608016
+QUARANTINE FORCE SEND EVENT: time=1451608020

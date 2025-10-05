@@ -1,0 +1,19 @@
+10:45:40.158334767 [14] backend.hpp:85               LOG_INFO      root         Parsing stream info:
+10:45:40.158334767 [14] backend.hpp:85               LOG_INFO      root          CREATE STREAM S {
+10:45:40.158334767 [14] backend.hpp:85               LOG_INFO      root         EVENT BUY { id:int, name:string, volume:int, price:double, stock_time:primary_time },
+10:45:40.158334767 [14] backend.hpp:85               LOG_INFO      root         EVENT SELL { id:int, name:string, volume:int, price:double, stock_time:primary_time }
+10:45:40.158334767 [14] backend.hpp:85               LOG_INFO      root         }
+10:45:40.159628343 [14] client_message_handler.hpp:183 LOG_INFO      root         Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         Received query 
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         'SELECT * FROM S
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         WHERE (BUY as A; SELL as A)
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         FILTER A[name = 'A']
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         WITHIN 10 [stock_time]
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         CONSUME BY NONE
+10:45:40.159928487 [14] client_message_handler.hpp:247 LOG_INFO      root         ' in ClientMessageHandler::add_query
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root         Parsing query info:
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root          SELECT * FROM S
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root         WHERE (BUY as A; SELL as A)
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root         FILTER A[name = 'A']
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root         WITHIN 10 [stock_time]
+10:45:40.159928927 [14] backend.hpp:90               LOG_INFO      root         CONSUME BY NONE

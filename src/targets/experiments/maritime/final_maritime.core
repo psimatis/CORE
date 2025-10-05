@@ -1,0 +1,16 @@
+CREATE STREAM S {
+EVENT coord { Start_Time:primary_time, End_Time:int, Vessel_ID:int, Y_Coordinate:double, X_Coordinate:double},
+EVENT gap_end { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT velocity { Start_Time:primary_time, End_Time:int, Vessel_ID:int, Velocity:double, Heading:double, Code_Number:int},
+EVENT gap_start { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT change_in_heading { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT entersArea { Start_Time:primary_time, End_Time:int, Vessel_ID:int, Area_ID:string},
+EVENT stop_start { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT proximity { Start_Time:primary_time, End_Time:int, Vessel_ID:int, Proximity:string, Vessel_ID_1:int, Vessel_ID_2:int},
+EVENT change_in_speed_start {Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT stop_end { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT slow_motion_start { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT change_in_speed_end { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT slow_motion_end { Start_Time:primary_time, End_Time:int, Vessel_ID:int},
+EVENT leavesArea { Start_Time:primary_time, End_Time:int, Vessel_ID:int, Area_ID:string}
+}
