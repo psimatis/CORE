@@ -27,7 +27,9 @@ class GenericQuery {
  protected:
   uint64_t current_stream_position = 0;
   Internal::QueryCatalog query_catalog;
-  std::unique_ptr<Library::Components::ResultHandler> result_handler;
+  std::unique_ptr<Library::Components::ResultHandler> result_handler; 
+
+  int y = 0;
 
   // Receiver for tuples
   std::atomic<bool> stop_condition = false;
@@ -86,6 +88,7 @@ class GenericQuery {
         std::optional<tECS::Enumerator> output = process_event(std::move(event.value()));
         (*result_handler)(std::move(output));
       }
+      std::cout << "Events που βγάζουμε στην blocking_event_queue (1000) : " << y << std::endl;
     });
   }
 
@@ -96,6 +99,7 @@ class GenericQuery {
     if (!got_event) {
       return {};
     }
+    y = y + 1;
     return std::move(event);
   }
 

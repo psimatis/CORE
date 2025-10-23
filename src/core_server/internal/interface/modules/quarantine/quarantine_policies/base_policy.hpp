@@ -49,6 +49,9 @@ class BasePolicy {
   std::list<moodycamel::BlockingReaderWriterQueue<Types::EventWrapper>> blocking_event_queues;
   moodycamel::BlockingReaderWriterQueue<Types::EventWrapper> send_event_queue;
 
+  int x = 0;
+  int z = 0;
+
  private:
   Catalog& catalog;
   std::atomic<Types::PortNumber>& next_available_inproc_port;
@@ -141,6 +144,7 @@ class BasePolicy {
 
     Types::EventWrapper event;
     while (send_event_queue.try_dequeue(event)) {
+      x = x + 1;
       LOG_L3_BACKTRACE(
         "Sending event with id {} and time to queries in "
         "BasePolicy::send_events_to_queries",
@@ -160,6 +164,7 @@ class BasePolicy {
       if (query_catalog.is_unique_event_id_relevant_to_query(
             event.get_unique_event_type_id())) {
         blocking_event_queue.enqueue(std::move(event.clone()));
+        z = z + 1;
       }
       i += 1;
     }
@@ -186,6 +191,8 @@ class BasePolicy {
       }
       force_add_tuples_to_send_queue();
       send_events_to_queries();
+      std::cout << "Events που βγάζουμε απο την send_event_queue: " << x << std::endl;
+      std::cout << "Events που βάζουμε στην blocking_event_queue (1000) : " << z << std::endl;
     });
   }
 

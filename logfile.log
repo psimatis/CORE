@@ -3077,3 +3077,2868 @@ PARTITION BY [Vessel_ID]
 WITHIN 5000 [Start_Time]
 CONSUME BY NONE
 ' in ClientMessageHandler::add_query
+10:32:55.099145877 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:32:55.101106794 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:50:43.650608737 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:50:43.653015872 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:00:46.063653814 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:00:46.065755522 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:25:03.106311647 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:25:03.108350897 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:25:20.102913384 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:25:20.105515801 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:25:20.112012468 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:32:05.399612336 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:32:05.401967461 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:32:23.118895657 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:32:23.121349449 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:32:23.127826990 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:38:03.434256984 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:38:03.436593244 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:38:21.848550031 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:38:21.851119614 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:38:21.857820864 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:45:15.595138299 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:45:15.597616299 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:45:32.430244335 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:45:32.432723793 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:45:32.439593502 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:09:41.412832356 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:09:41.414814773 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:09:46.304664359 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:09:46.306885400 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:09:46.313373067 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:11:32.324720513 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:11:32.326743304 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:11:37.077651917 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:11:37.079834250 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:11:37.086244833 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:12:03.905427992 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:12:03.907470492 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:12:08.619017585 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:12:08.621169960 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:12:08.627473793 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:12:47.100917172 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:12:47.102935547 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:12:51.809312715 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:12:51.811507340 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:12:51.817845882 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE entersArea; slow_motion_start; stop_start
+PARTITION BY [Vessel_ID]
+WITHIN 900 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:13:56.271060655 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:13:56.273089446 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:14:00.982308428 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:14:00.984530428 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:14:00.990870553 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:14:42.042685211 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:14:42.044684669 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:14:46.830990192 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:14:46.833157775 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:14:46.839431650 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:15:21.116765194 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:15:21.118751361 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:15:25.920973030 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:15:25.923130322 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:15:25.929460114 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:15:56.309247697 [14] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:15:56.311281531 [14] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:16:01.098199907 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:16:01.100395824 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:16:01.106733157 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:48:59.432414462 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:48:59.434426003 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; gap_start
+PARTITION BY [Vessel_ID]
+WITHIN 600 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:50:33.331896506 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:50:33.333989798 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:52:27.452887836 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:52:27.456538252 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 300 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:52:27.464363294 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:07:36.750185631 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:07:36.754405881 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:08:39.764843861 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:08:39.768966528 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:08:39.781933528 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:00:43.094510423 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:00:43.103081839 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:00:43.113208048 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:09:56.983535805 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:09:56.986748472 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:09:56.993524763 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:15:21.511497406 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:15:21.513747864 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:15:21.520226656 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:23:09.606383087 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:23:09.608989129 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:23:09.617699295 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:24:04.381936335 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:24:04.384297876 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:24:04.391565626 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:33:00.390885952 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:33:00.393273869 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:33:00.401933119 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:37:48.492712321 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:37:48.495553238 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:37:48.502031988 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:40:19.610841946 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:40:19.614943404 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:40:54.817342553 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:40:54.820057637 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:41:17.195894112 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:41:17.199629987 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:41:17.206427154 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:41:51.588127427 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:41:51.590283844 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:41:56.996493166 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:41:56.999268279 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:41:57.010387359 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:42:57.193297616 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:42:57.195278199 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:43:02.300187917 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:43:02.303164625 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:43:02.310877000 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:44:49.567476467 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:44:49.569552425 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:45:08.064443941 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:45:08.067020316 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:45:08.073464191 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:50:48.749668633 [14] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:50:48.752116050 [14] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:51:09.651705649 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:51:09.654237649 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:51:09.660606774 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:57:31.739333000 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:57:31.741750916 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:57:48.030896987 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:57:48.033375695 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:57:48.040126320 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:03:34.505992980 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:03:34.508443313 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:03:50.808944634 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:03:50.811399176 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:03:50.817962134 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:10:07.479994003 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:10:07.482084211 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:10:23.076021260 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:10:23.078360718 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:10:23.084875927 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:17:35.804959793 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:17:35.806997960 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:17:51.000061030 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:17:51.002546364 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:17:51.009135530 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:24:33.696326500 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:24:33.698311208 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:24:48.891665009 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:24:48.894027759 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:24:48.900552884 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:33:53.558821594 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:33:53.560975969 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:34:10.730805149 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:34:10.733283233 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:34:10.739730858 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:44:32.911812855 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:44:32.913898397 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:44:48.468416153 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:44:48.471610945 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:44:48.478138612 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:54:22.877203739 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:54:22.879178906 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:54:38.102789837 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:54:38.105105337 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:54:38.111518295 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:13:36.479808044 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:13:36.481829336 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as T1; BUY as T2; BUY as T3; BUY as NE)
+FILTER T1[name = 'INTC'] AND T2[name = 'RIMM'] AND T3[name = 'QQQ'] AND NE[name = 'NotExists'] 
+WITHIN 10000 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:13:42.744210234 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:13:42.747317276 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:13:42.753918401 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as T1; BUY as T2; BUY as T3; BUY as NE)
+FILTER T1[name = 'INTC'] AND T2[name = 'RIMM'] AND T3[name = 'QQQ'] AND NE[name = 'NotExists'] 
+WITHIN 10000 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:16:02.766654333 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:16:02.768739083 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:16:09.037493587 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:16:09.039965170 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:16:09.046477337 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:20:00.737547660 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:20:00.739536743 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:20:06.993497977 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:20:06.995791402 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:20:07.002352971 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:21:53.692660760 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:21:53.694738885 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:21:59.760224867 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:21:59.762556742 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:21:59.769082825 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:23:40.733897274 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:23:40.735935107 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:23:46.931131423 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:23:46.933504132 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:23:46.939963298 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:25:28.446972908 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:25:28.448959824 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:25:34.760248897 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:25:34.762582314 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:25:34.768988105 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:26:37.921107357 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:26:37.923193898 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:26:44.019514922 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:26:44.021892047 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:26:44.028360256 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:27:37.006832503 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:27:37.008881336 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:27:43.194222214 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:27:43.196561381 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:27:43.203661756 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:28:35.096750855 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:28:35.098866688 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:28:41.248908544 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:28:41.251245095 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:28:41.257730621 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:29:41.140316420 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:29:41.142324545 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:29:47.408035882 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:29:47.410405757 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 4 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:29:47.416956674 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:41:05.405467773 [14] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:41:05.409072856 [14] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:41:25.892843635 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:41:25.895689177 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:41:25.902385177 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:22:15.826134740 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:22:15.828834646 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:22:37.744614659 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:22:37.746931992 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:22:37.753688784 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:27:57.901194191 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:27:57.903771191 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:28:14.571182178 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:28:14.573511720 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:28:14.579817428 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:33:25.336643285 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:33:25.338948744 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:33:42.476644091 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:33:42.479056425 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:33:42.485463383 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:06:45.668269572 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:06:45.671029530 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:06:55.181892618 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:06:55.184989993 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:06:55.193528534 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:08:59.294539245 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:08:59.296541029 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:09:06.073150192 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:09:06.075551859 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:09:06.083354025 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:11:08.281721526 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:11:08.283780318 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:11:14.762119863 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:11:14.764511321 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:11:14.771131696 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:15:27.615904459 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:15:27.617923626 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:15:35.201070900 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:15:35.203759359 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:15:35.210606442 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:20:23.391361450 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:20:23.395157617 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:20:31.691759898 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:20:31.694217857 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:20:31.701057607 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:02:28.519827667 [14] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:02:28.521843917 [14] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:02:32.384440398 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:02:32.387926398 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:02:32.395238606 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+FILTER A[name = 'A']
+WITHIN 10 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:03:47.554992413 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:03:47.556996296 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:03:51.381368970 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:03:51.383701886 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:03:51.391569970 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:04:35.559703128 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:04:35.561723587 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:04:39.322901339 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:04:39.325143797 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:04:39.331482464 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:04:54.469825221 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:04:54.471825054 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:04:58.273762105 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:04:58.276006397 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:04:58.282511064 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:05:55.567266055 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:05:55.569313388 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:05:59.407527731 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:05:59.409818856 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:05:59.416171856 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:06:52.392395784 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:06:52.394355001 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:06:56.197651305 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:06:56.199986430 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:06:56.206583180 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:09:13.487261528 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:09:13.489265111 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:09:17.399337197 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:09:17.401681197 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:09:17.408551197 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:10:39.550311152 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:10:39.553391319 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:10:43.583666216 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:10:43.585994216 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:10:43.592418633 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (BUY as A; SELL as A)
+WITHIN 15 [stock_time]
+CONSUME BY NONE
+' in ClientMessageHandler::add_query
+13:12:46.326178405 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:12:46.328217280 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:12:51.190461366 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:12:51.192971282 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:12:51.199467282 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:55:55.171792886 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:55:55.173790428 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:56:48.880825050 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:56:48.882822842 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:56:53.786904241 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:56:53.791024449 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:56:53.799180157 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:26:00.193065904 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:26:00.195244487 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:26:05.620790344 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:26:05.623912344 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:26:05.632851969 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:29:36.696770595 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:29:36.699451636 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:29:43.044060958 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:29:43.046753750 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:29:43.052031792 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:33:54.307447589 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:33:54.310119631 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:33:54.316876672 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:34:37.929434616 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:34:37.931825449 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:34:37.938047866 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:35:13.570344167 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:35:13.572406209 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:35:19.341608795 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:35:19.343958836 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:35:19.349097461 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:35:48.165210149 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:35:48.167275774 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:35:54.166000172 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:35:54.168339839 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:35:54.173609339 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:36:24.203256568 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:36:24.205268693 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:36:30.127166613 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:36:30.129573071 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:36:30.134783946 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:41:39.139556449 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:41:39.141540908 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:41:45.092611855 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:41:45.094791605 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:59:17.981475210 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:59:17.983664585 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:59:24.016393797 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:59:24.019088505 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:59:24.027249589 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:00:55.662803255 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:00:55.665895838 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:00:55.672872963 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:21:59.170785563 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:21:59.173282105 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:23:39.752348006 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:23:39.755043381 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:23:39.761706840 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:24:18.107233469 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:24:18.109860760 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME  seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:25:33.727840962 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:25:33.731036503 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+MEMORY_TIME  seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:25:33.736547878 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:26:06.862415505 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:26:06.865155130 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME  seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:35:37.355772234 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:35:37.358153984 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:35:37.364577734 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:35:42.581253820 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:35:42.583629237 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:35:42.589862903 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:52:19.792352881 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:52:19.801357672 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:52:19.808299131 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+14:55:38.009630667 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+14:55:38.012131001 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+14:55:38.019322167 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+15:00:50.992787653 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+15:00:50.995857778 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+15:00:51.009687153 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+15:01:44.455933462 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+15:01:44.458778462 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+15:01:44.465575253 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+07:38:52.296345813 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+07:38:52.298690938 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+07:39:08.168813175 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+07:39:08.171612591 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+07:39:08.178540216 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+07:49:42.895402093 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+07:49:42.897992635 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+07:50:03.640048298 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+07:50:03.642629381 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+07:50:03.650004048 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:15:48.453871335 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:15:48.456476502 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:15:48.463674085 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:34:59.226161878 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:34:59.228738962 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:34:59.235836128 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:46:40.316479321 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:46:40.319547113 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:46:40.328151488 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:47:10.469003738 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:47:10.471506613 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:47:10.478313446 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:47:51.322265951 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:47:51.324660326 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:47:51.331412659 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:48:36.253792153 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:48:36.256380944 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 180 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:48:36.263172403 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:49:12.477844218 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:49:12.480239051 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 180 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:49:12.487109051 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:49:38.171446049 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:49:38.173852341 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 180 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:49:38.180569132 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:50:08.774839219 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:50:08.777343396 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:50:08.784199299 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:50:45.462303672 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:50:45.464682891 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:50:45.471652835 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:52:00.113350837 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:52:00.115782837 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:52:00.122444628 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:52:54.878630259 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:52:54.881709676 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:52:54.889648009 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:53:42.167166837 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:53:42.169289962 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:53:47.082602985 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:53:47.086521485 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:53:47.098270819 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:11:49.398430339 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:11:49.402164422 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:11:49.408928381 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:12:42.554710086 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:12:42.557617253 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:12:42.570229711 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:13:20.067456944 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:13:20.069850694 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:13:20.078544569 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:13:55.590530322 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:13:55.593009905 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:13:55.599740988 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:14:59.871239740 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:14:59.873924240 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:14:59.880769782 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:15:37.393576834 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:15:37.396331459 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:15:37.403667834 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:18:55.412868823 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:18:55.415602864 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:18:55.422602198 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:20:30.699911908 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:20:30.702314450 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:20:30.709049616 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:30:29.851649147 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:30:29.854182272 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:30:29.861434564 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:33:15.017716446 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:33:15.020178946 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:33:15.027003905 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:35:01.214436333 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:35:01.216872384 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 35 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:35:01.223737704 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:37:05.065581838 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:37:05.067988338 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 40 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:37:05.074744588 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:41:10.906328507 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:41:10.908717923 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 42 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:41:10.915529590 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:43:52.412275159 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:43:52.415015284 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 41 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:43:52.422037034 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:45:51.070434490 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:45:51.073023615 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 41 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:45:51.079882615 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:50:05.604483484 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:50:05.607564984 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:50:05.614307650 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:59:51.897749532 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:59:51.900120741 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 40 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:59:51.907531616 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:12:49.810846324 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:12:49.815090365 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:12:49.825664282 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:16:17.953093490 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:16:17.955443407 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 35 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:16:17.962419282 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:18:32.833177191 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:18:32.835608983 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 40 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:18:32.842774733 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:20:48.040896198 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:20:48.043490073 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 41 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:20:48.051527282 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:22:35.635469400 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:22:35.638014483 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 42 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:22:35.645107358 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:24:42.112671528 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:24:42.115216403 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 43 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:24:42.122461819 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:27:08.095810838 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:27:08.098262838 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:27:08.105152963 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:28:47.568263386 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:28:47.570658344 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:28:47.577580094 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:30:55.849312493 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:30:55.854600534 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 40 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:30:55.861400534 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:41:12.554096779 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:41:12.556752362 [12] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:41:12.563595154 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:49:25.748770660 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:49:25.751561119 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:49:25.763510619 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:03:45.400163405 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:03:45.404175196 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:03:45.412199530 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:13:18.525782141 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:13:18.528793754 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:13:18.536879678 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:18:45.757114030 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:18:45.759928155 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:18:45.769535405 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:19:30.126427543 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:19:30.128756002 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 19 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:19:30.135551252 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:20:02.213037523 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:20:02.215667898 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 18 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:20:02.222396148 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:21:19.200241615 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:21:19.202749907 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:21:19.209639407 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:23:22.090293470 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:23:22.093777554 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 42 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:23:22.100575887 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:57:50.597865845 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:57:50.601027178 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 42 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:57:50.610936178 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:10:46.977013465 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:10:46.979770632 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 42 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:10:46.986863174 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:39:25.601366106 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:39:25.605411939 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:39:25.621883397 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:48:36.797845756 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:48:36.800318631 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:48:36.808557423 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+13:53:45.625807052 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:53:45.628600386 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:53:45.638629094 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+15:14:46.545107530 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+15:14:46.547607822 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+15:14:46.555332697 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:32:22.366570855 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:32:22.369856897 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:32:22.378937272 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:33:23.383272877 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:33:23.385728585 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:33:23.393333002 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+08:40:51.028338875 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+08:40:51.030740875 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+08:40:51.038574708 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:06:13.340864032 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:06:13.344615032 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:06:13.357389115 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:37:01.345792599 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:37:01.349089168 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:37:01.359101959 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+09:52:16.539415461 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:52:16.541769420 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:52:27.283783341 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:52:27.286725091 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:52:27.294147841 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:55:02.102887677 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:55:02.104811302 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+09:55:09.706405930 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+09:55:09.709009055 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+09:55:09.716383347 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:02:37.236492033 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:02:37.238572116 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:02:44.929196044 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:02:44.931517127 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:02:44.938729294 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:04:23.247826006 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:04:23.249854548 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:04:30.781872302 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:04:30.784202010 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 4 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:04:30.791458510 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:05:32.320177052 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:05:32.322146218 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:05:39.828488889 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:05:39.831017264 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:05:39.843753264 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:06:44.537008002 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:06:44.538983585 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:06:52.280927193 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:06:52.283232943 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:06:52.290376193 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:09:49.738908442 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:09:49.740906192 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:09:57.419278403 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:09:57.421571028 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 1 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:09:57.429113945 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:11:40.474991709 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:11:40.477002084 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:11:48.124264649 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:11:48.126612524 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 2 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:11:48.134134899 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:13:17.834475233 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:13:17.836707733 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 3 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:13:17.844132066 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:14:24.336056735 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:14:24.338410485 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 4 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:14:24.345606193 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:15:24.611918674 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:15:24.614243215 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:15:24.621741965 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:16:26.732558737 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:16:26.734862196 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:16:26.742132737 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:17:48.815690108 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:17:48.818033192 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:17:48.825541733 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:19:07.735658220 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:19:07.738486512 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:19:07.747691137 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:20:51.053224526 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:20:51.055509359 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:20:51.062964318 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:22:29.720086660 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:22:29.722305378 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:22:29.729390616 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:24:03.674735240 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:24:03.677087740 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:24:03.690140448 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:26:02.500095427 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:26:02.502505135 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:26:02.511434052 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:27:27.815226424 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:27:27.817930299 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:27:27.825263924 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:28:33.875210136 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:28:33.877591802 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:28:33.885815761 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+10:31:09.793238118 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:31:09.795288368 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:31:34.461682215 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:31:34.464540019 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:31:34.472264052 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:36:28.977000404 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:36:28.979657112 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 10 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:36:28.987767904 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:42:18.788223920 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:42:18.790936920 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 15 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:42:18.799181920 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:48:55.448912277 [14] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:48:55.451721736 [14] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:48:55.459186819 [14] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+10:56:05.367526136 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+10:56:05.370325303 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 30 seconds {S}
+}
+' in ClientMessageHandler::set_option
+10:56:05.380486969 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:05:10.141541326 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:05:10.144253743 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:05:10.153964201 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:15:01.921809405 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:15:01.924728114 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:15:01.932763239 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:27:33.389356510 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:27:33.391728177 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:28:04.509225740 [12] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:28:04.511221156 [12] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:28:35.122271699 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:28:35.124406282 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:35:42.023470042 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:35:42.027316167 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:35:42.038977583 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+11:49:53.152139964 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+11:49:53.156204214 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 5 seconds {S}
+}
+' in ClientMessageHandler::set_option
+11:49:53.165466714 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE change_in_heading; change_in_speed_start
+PARTITION BY [Vessel_ID]
+WITHIN 5 [Time_A]
+CONSUME BY NONE' in ClientMessageHandler::add_query
+12:21:56.136660172 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:21:56.139298755 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 20 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:21:56.146745172 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+12:25:06.166871073 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+12:25:06.169375573 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+12:25:06.176997990 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:25:52.558004961 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:25:52.563915086 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 60 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:25:52.572930545 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; (BUY OR SELL) as oracle; (BUY OR SELL) as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:30:00.093897360 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:30:00.096474068 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:30:00.104485652 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:32:15.352985764 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:32:15.355294305 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:32:15.363140722 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query
+13:46:41.905295800 [13] client_message_handler.hpp:179 LOG_INFO Received request for declaring stream S in ClientMessageHandler::stream_declaration_from_string
+13:46:41.908675300 [13] client_message_handler.hpp:252 LOG_INFO Received option 
+'CREATE QUARANTINE {
+FIXED_TIME 45 seconds {S}
+}
+' in ClientMessageHandler::set_option
+13:46:41.916251175 [13] client_message_handler.hpp:240 LOG_INFO Received query 
+'SELECT * FROM S
+WHERE (SELL as msft; BUY as oracle; BUY as csco; SELL as amat)
+FILTER msft[name = 'MSFT'] AND oracle[name = 'ORCL'] AND csco[name = 'CSCO'] AND amat[name = 'AMAT']
+PARTITION BY [volume]
+WITHIN 10000 [stock_time]
+CONSUME BY ANY
+' in ClientMessageHandler::add_query

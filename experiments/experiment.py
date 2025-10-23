@@ -9,10 +9,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "direct"
 BUILD = (sys.argv[2].lower() if len(sys.argv) > 2 else "release")
-QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/maritime/q1.txt"
-DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/maritime/maritime.core"
-CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/maritime/100000.csv"
-OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/maritime/quarantine2.core"
+QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/unordered_stocks/queries/other-q3_any.txt"
+DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/unordered_stocks/declaration.core"
+CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/unordered_stocks/stock_data.csv"
+OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/unordered_stocks/quarantine_declaration.core"
 
 DIR = "Debug" if BUILD == "debug" else "Release"
 MOUNT_FLAGS = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]
@@ -61,9 +61,14 @@ def run_test(description, cmd, query_contents, options_contents=None):
     print(f"{'='*60}")
     print("➜", " ".join(shlex.quote(a) for a in cmd))
     print("\nQuery:\n  " + query_contents)
-
     
+    drops = 0
+    received = 0
+    sent = 0
+
+    t0 = time.perf_counter()
     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    elapsed_time = time.perf_counter() - t0
 
     if options_contents is None:
         log_file = open(os.path.join(PROJECT_ROOT, "logs/logfile_experiment_direct.log"), "w")
@@ -81,17 +86,29 @@ def run_test(description, cmd, query_contents, options_contents=None):
             elif line.startswith('['):
                 result_log_file.write(f"{line.split(') )')[0]}" + ") )\n")
             else:
+                if line.startswith("Number of events DROPPED"):
+                    match = re.search(r"\d+", line)
+                    if match:
+                        drops = int(match.group())
+                elif line.startswith("Number of events RECEIVED"):
+                    match = re.search(r"\d+", line)
+                    if match:
+                        received = int(match.group())
+                elif line.startswith("Number of events SENT"):
+                    match = re.search(r"\d+", line)
+                    if match:
+                        sent = int(match.group())
                 quarantine_file.write(f"{line}\n")
     
     if options_contents is None:
         num_results = sum(1 for line in result.stdout.splitlines() if line.strip().startswith('['))
-        return num_results
+        return num_results, elapsed_time
     
     received_order, sent_order, complex_events = extract_events(result.stdout)
     print("\n🦠 Quarantine Results:")
-    print(f"📥 Number of events RECEIVED by quarantine: {len(received_order)}")
-    print(f"📤 Number of events SENT by quarantine:     {len(sent_order)}")
-    print(f"🗑️  Number of events DROPPED by quarantine:  {len(received_order)-len(sent_order)}")
+    print(f"📥 Number of events RECEIVED by quarantine: {received}")
+    print(f"📤 Number of events SENT by quarantine:     {sent}")
+    print(f"🗑️  Number of events DROPPED by quarantine:  {drops}")
     print(f"🔍 Number of complex events found: {len(complex_events)}")
     
     if received_order != sent_order:
@@ -100,8 +117,8 @@ def run_test(description, cmd, query_contents, options_contents=None):
             print(f"✅ CORRECT ORDERING: Events sent in chronological order")
     else:
         print(f"❌ NO REORDERING: Events sent in same order as received")
-    
-    return received_order, sent_order, complex_events
+
+    return received_order, sent_order, complex_events, elapsed_time
 
 if __name__ == "__main__":
     if subprocess.call(["docker", "image", "inspect", IMG_LOCAL], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
@@ -120,41 +137,33 @@ if __name__ == "__main__":
 
     if MODE == "direct":
         cmd_direct = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITHOUT_QUARANTINE]
-        t0 = time.perf_counter()
-        num_results = run_test("DIRECT Policy (No Quarantine)", cmd_direct, query_contents)
-        elapsed = time.perf_counter() - t0
+        num_results, core_time = run_test("DIRECT Policy (No Quarantine)", cmd_direct, query_contents)
         print("\n🔍 Results:")
         print(f"Number of input events : {count_events(CSV_PATH)}")
         print(f"Number of results      : {num_results}")
-        print(f"Query execution time   : {elapsed:.3f}s")
-        print(f"Query throughput       : {num_results / elapsed:.2f} results/sec")
+        print(f"Query execution time   : {core_time:.2f}s")
+        print(f"Query throughput       : {num_results / core_time:.2f} results/sec")
     elif MODE == "wait":
         cmd_wait = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITH_QUARANTINE]
-        t0 = time.perf_counter()
-        received_wait, sent_wait, events_wait = run_test("WAIT Quarantine Policy", cmd_wait, query_contents, options_contents)
-        elapsed = time.perf_counter() - t0
+        received_wait, sent_wait, events_wait, core_time = run_test("WAIT Quarantine Policy", cmd_wait, query_contents, options_contents)
         print("\n🔍 Results:")
         print(f"Number of input events : {count_events(CSV_PATH)}")
         print(f"Number of results      : {len(events_wait)}")
-        print(f"Query execution time   : {elapsed:.3f}s")
-        print(f"Query throughput       : {len(events_wait) / elapsed:.2f} results/sec")
+        print(f"Query execution time   : {core_time:.2f}s")
+        print(f"Query throughput       : {len(events_wait) / core_time:.2f} results/sec")
     elif MODE == "compare":
         cmd_direct = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITHOUT_QUARANTINE]
         cmd_wait = ["docker", "run", "--rm", *PLATFORM_FLAG, *ENV_FLAG, *MOUNT_FLAGS, IMG_LOCAL, *CMD_WITH_QUARANTINE]
         
         print("\nRunning DIRECT policy (no quarantine)…")
-        t0 = time.perf_counter()
-        num_results_direct = run_test("DIRECT Policy (No Quarantine)", cmd_direct, query_contents)
-        elapsed_direct = time.perf_counter() - t0
-        print(f"Query execution time   : {elapsed_direct:.3f}s")
-        print(f"Query throughput       : {num_results_direct / elapsed_direct:.2f} results/sec")
+        num_results_direct, core_time = run_test("DIRECT Policy (No Quarantine)", cmd_direct, query_contents)
+        print(f"Query execution time   : {core_time:.2f}s")
+        print(f"Query throughput       : {num_results_direct / core_time:.2f} results/sec")
         
         print("\nRunning WAIT quarantine policy…")
-        t0 = time.perf_counter()
-        received_wait, sent_wait, events_wait = run_test("WAIT Quarantine Policy", cmd_wait, query_contents, options_contents)
-        elapsed_wait = time.perf_counter() - t0
-        print(f"Query execution time   : {elapsed_wait:.3f}s")
-        print(f"Query throughput       : {len(events_wait) / elapsed_wait:.2f} results/sec")
+        received_wait, sent_wait, events_wait, core_time = run_test("WAIT Quarantine Policy", cmd_wait, query_contents, options_contents)
+        print(f"Query execution time   : {core_time:.2f}s")
+        print(f"Query throughput       : {len(events_wait) / core_time:.2f} results/sec")
         
         print("\n🔍 Comparison Results:")
         print(f"Number of input events         : {count_events(CSV_PATH)}")

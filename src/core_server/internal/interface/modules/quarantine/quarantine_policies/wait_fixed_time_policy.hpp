@@ -26,6 +26,10 @@ namespace CORE::Internal::Interface::Module::Quarantine {
 class WaitFixedTimePolicy : public BasePolicy {
   std::mutex events_lock;
   std::list<Types::EventWrapper> events;
+  std::unordered_set<size_t> memory_budgets = {128, 256, 512, 1024, 2048, 4096};
+  int drops = 0;
+  int received_events = 0;
+  int sent_events = 0;
   std::chrono::duration<int64_t, std::nano> time_to_wait;
 
   // Corresponds to the last time an event was sent
@@ -41,6 +45,7 @@ class WaitFixedTimePolicy : public BasePolicy {
 
   void receive_event(Types::EventWrapper&& event) override {
     std::cout << "QUARANTINE RECEIVE: event time=" << event.get_primary_time().val << std::endl;
+    received_events++;
     LOG_L3_BACKTRACE(
       "Received event with id {} and time {} in "
       "WaitFixedTimePolicy::receive_event",
@@ -51,6 +56,7 @@ class WaitFixedTimePolicy : public BasePolicy {
 
     if (event.get_primary_time().val < last_time_sent.val) {
       std::cout << "QUARANTINE DROP: event time=" << event.get_primary_time().val << " < last_sent=" << last_time_sent.val << std::endl;
+      drops++;
       LOG_L3_BACKTRACE(
         "Dropping event with id {} and time {} in "
         "WaitFixedTimePolicy::receive_event due to time being before last time sent",
@@ -60,6 +66,16 @@ class WaitFixedTimePolicy : public BasePolicy {
     }
 
     events.insert(std::lower_bound(events.begin(), events.end(), event.get_primary_time().val, is_nanoseconds_after_existing_event), std::move(event));
+    size_t element_size = sizeof(Types::EventWrapper) + 2 * sizeof(void*);
+    size_t total_bytes = events.size() * element_size;
+    std::cout << "TOTAL MB" << total_bytes/(1024*1024) << std::endl;
+    if (memory_budgets.find(total_bytes/(1024*1024)) != memory_budgets.end()) {
+      std::cout << "QUARANTINE MEMORY BUDGET REACHED: buffer size=" << events.size() << " total bytes=" << total_bytes << std::endl;
+      LOG_L3_BACKTRACE(
+        "Memory budget reached with total bytes {} in "
+        "MemoryBudgetsPolicy::receive_event",
+        total_bytes);
+    }
     std::cout << "QUARANTINE SORTED: buffer size=" << events.size() << std::endl;
   }
 
@@ -81,6 +97,7 @@ class WaitFixedTimePolicy : public BasePolicy {
       auto duration = now - event.get_received_time();
       if (duration > time_to_wait) {
         std::cout << "QUARANTINE SEND: event time=" << event.get_primary_time().val << std::endl;
+        sent_events++;
         LOG_L3_BACKTRACE(
           "Adding event with id {} and time {} to send queue in "
           "WaitFixedTimePolicy::try_add_tuples_to_send",
@@ -102,9 +119,13 @@ class WaitFixedTimePolicy : public BasePolicy {
     std::cout << "QUARANTINE FORCE SEND: flushing " << events.size() << " remaining events" << std::endl;
     for (auto iter = events.begin(); iter != events.end();) {
       std::cout << "QUARANTINE FORCE SEND EVENT: time=" << iter->get_primary_time().val << std::endl;
+      sent_events++;
       this->send_event_queue.enqueue(std::move(*iter));
       iter = events.erase(iter);
     }
+    std::cout << "Number of events RECEIVED by quarantine: " << received_events << std::endl;
+    std::cout << "Number of events SENT by quarantine: " << sent_events << std::endl;
+    std::cout << "Number of events DROPPED by quarantine: " << drops << std::endl;
   }
 
  private:
