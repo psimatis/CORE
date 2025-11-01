@@ -9,10 +9,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "direct"
 BUILD = (sys.argv[2].lower() if len(sys.argv) > 2 else "release")
-QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/unordered_stocks/queries/other-q3_any.txt"
-DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/unordered_stocks/declaration.core"
-CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/unordered_stocks/stock_data.csv"
-OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/unordered_stocks/quarantine_declaration.core"
+QUERY = sys.argv[3] if len(sys.argv) > 3 else "src/targets/experiments/my_data_unordered/query_1.txt"
+DECL = sys.argv[4] if len(sys.argv) > 4 else "src/targets/experiments/my_data_unordered/declaration.core"
+CSV = sys.argv[5] if len(sys.argv) > 5 else "src/targets/experiments/my_data_unordered/stock_events_unsorted.csv"
+OPTIONS = sys.argv[6] if len(sys.argv) > 6 else "src/targets/experiments/my_data_unordered/quarantine_wait.core"
 
 DIR = "Debug" if BUILD == "debug" else "Release"
 MOUNT_FLAGS = ["-v", f"{PROJECT_ROOT}:/workspace", "-w", "/workspace"]

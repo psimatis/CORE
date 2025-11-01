@@ -24,7 +24,7 @@ option_declaration
 quarantine_policy
  : K_FIXED_TIME time_span LEFT_CURLY_BRACKET stream_names RIGHT_CURLY_BRACKET # fixed_time_policy
  | K_DIRECT LEFT_CURLY_BRACKET stream_names RIGHT_CURLY_BRACKET # direct_policy
- | K_DYNAMIC_TIME LEFT_CURLY_BRACKET stream_names RIGHT_CURLY_BRACKET # dynamic_time_policy
+ | K_DYNAMIC_TIME time_span LEFT_CURLY_BRACKET stream_names RIGHT_CURLY_BRACKET # dynamic_time_policy
  ;
 
  stream_names

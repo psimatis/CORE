@@ -149,6 +149,7 @@ public:
     Dynamic_time_policyContext(Quarantine_policyContext *ctx);
 
     antlr4::tree::TerminalNode *K_DYNAMIC_TIME();
+    Time_spanContext *time_span();
     antlr4::tree::TerminalNode *LEFT_CURLY_BRACKET();
     Stream_namesContext *stream_names();
     antlr4::tree::TerminalNode *RIGHT_CURLY_BRACKET();

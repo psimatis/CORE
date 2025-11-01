@@ -12,7 +12,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 BUILD = (sys.argv[1].lower() if len(sys.argv) > 2 else "release")
 QUERY = sys.argv[2] if len(sys.argv) > 3 else "src/targets/experiments/maritime/q1.txt"
 DECL = sys.argv[3] if len(sys.argv) > 4 else "src/targets/experiments/maritime/maritime.core"
-CSV = sys.argv[4] if len(sys.argv) > 5 else "src/targets/experiments/maritime/1M.csv"
+CSV = sys.argv[4] if len(sys.argv) > 5 else "src/targets/experiments/maritime/CSV/1M.csv"
 OPTIONS = sys.argv[5] if len(sys.argv) > 6 else "src/targets/experiments/maritime/quarantine2.core"
 
 DIR = "Debug" if BUILD == "debug" else "Release"
@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     print("\nQuery:\n  " + query_contents)
 
-    match = re.search(r'FIXED_TIME\s+(\d+)\s+seconds', options_contents)
+    match = re.search(r'DYNAMIC_TIME\s+(\d+)\s+seconds', options_contents)
     number = None
     quarantine_times = []
     if match:
@@ -167,8 +167,8 @@ if __name__ == "__main__":
     results_labels = ["Execution Time (s)", "Throughput (results/s)", "Number of Results", "Number of Drops"]
 
     for i in quarantine_times:
-        options_contents = re.sub(r'FIXED_TIME\s+\d+\s+seconds',
-                    f'FIXED_TIME {i} seconds',
+        options_contents = re.sub(r'DYNAMIC_TIME\s+\d+\s+seconds',
+                    f'DYNAMIC_TIME {i} seconds',
                     options_contents)
 
         with open(OPTIONS_PATH, "w") as f:
@@ -286,8 +286,8 @@ if __name__ == "__main__":
     plt.savefig("Drops.png", dpi=300)
     #plt.show()
 
-    options_contents = re.sub(r'FIXED_TIME\s+\d+\s+seconds',
-                    f'FIXED_TIME {number} seconds',
+    options_contents = re.sub(r'DYNAMIC_TIME\s+\d+\s+seconds',
+                    f'DYNAMIC_TIME {number} seconds',
                     options_contents)
     
     with open(OPTIONS_PATH, "w") as f:

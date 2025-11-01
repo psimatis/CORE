@@ -26,24 +26,33 @@ namespace CORE::Internal::Interface::Module::Quarantine {
 class WaitDynamicTimePolicy : public BasePolicy {
   std::mutex events_lock;
   std::list<Types::EventWrapper> events;
-  std::unordered_set<size_t> memory_budgets = {128, 256, 512, 1024, 2048, 4096};
+
+  std::chrono::duration<float> quarantine_time = std::chrono::duration<float>(0.0f);
+  float avg_lateness = 0.0;
+  float max_real_time_seen = 0.0;
+  float alpha = 0.1;  // Smoothing factor for exponential moving average
+  float SAFETY_MARGIN = 1.0;
+
   int drops = 0;
   int received_events = 0;
   int sent_events = 0;
-  std::chrono::duration<int64_t, std::nano> time_to_wait;
+  std::chrono::duration<float> time_to_wait;
 
   // Corresponds to the last time an event was sent
   Types::IntValue last_time_sent = Types::IntValue::create_lower_bound();
 
  public:
-  WaitDynamicTimePolicy(Catalog& catalog, std::atomic<Types::PortNumber>& next_available_inproc_port, std::chrono::duration<int64_t, std::nano> time_to_wait)
-      : BasePolicy(catalog, next_available_inproc_port), time_to_wait(time_to_wait) {
+  WaitDynamicTimePolicy(Catalog& catalog, std::atomic<Types::PortNumber>& next_available_inproc_port, std::chrono::duration<float> time_to_wait)
+      : BasePolicy(catalog, next_available_inproc_port), 
+        quarantine_time(time_to_wait),
+        time_to_wait(time_to_wait) {
     this->start();
   }
 
   ~WaitDynamicTimePolicy() { this->handle_destruction(); }
 
   void receive_event(Types::EventWrapper&& event) override {
+    float lateness = 0.0;
     std::cout << "QUARANTINE RECEIVE: event time=" << event.get_primary_time().val << std::endl;
     received_events++;
     LOG_L3_BACKTRACE(
@@ -64,18 +73,20 @@ class WaitDynamicTimePolicy : public BasePolicy {
         event.get_primary_time().val);
       return;
     }
+    if (static_cast<float>(event.get_primary_time().val) < max_real_time_seen) {
+      lateness = max_real_time_seen - static_cast<float>(event.get_primary_time().val);
+    }else {
+      lateness = 0.0;
+    }
+    max_real_time_seen = std::max(max_real_time_seen, static_cast<float>(event.get_primary_time().val));
+
+  avg_lateness = alpha * lateness + (1 - alpha) * avg_lateness;
+  // Update quarantine_time as a chrono duration (seconds)
+  quarantine_time = std::chrono::duration<float>(avg_lateness + SAFETY_MARGIN);
+  quarantine_time = std::clamp(quarantine_time, std::chrono::duration<float>(1.0f), std::chrono::duration<float>(5.0f));  // Clamp between 1 and 5 seconds
+  std::cout << "QUARANTINE TIME UPDATED: avg_lateness=" << avg_lateness << " quarantine_time=" << quarantine_time.count() << std::endl;
 
     events.insert(std::lower_bound(events.begin(), events.end(), event.get_primary_time().val, is_nanoseconds_after_existing_event), std::move(event));
-    size_t element_size = sizeof(Types::EventWrapper) + 2 * sizeof(void*);
-    size_t total_bytes = events.size() * element_size;
-    std::cout << "TOTAL MB" << total_bytes/(1024*1024) << std::endl;
-    if (memory_budgets.find(total_bytes/(1024*1024)) != memory_budgets.end()) {
-      std::cout << "QUARANTINE MEMORY BUDGET REACHED: buffer size=" << events.size() << " total bytes=" << total_bytes << std::endl;
-      LOG_L3_BACKTRACE(
-        "Memory budget reached with total bytes {} in "
-        "WaitDynamicTimePolicy::receive_event",
-        total_bytes);
-    }
     std::cout << "QUARANTINE SORTED: buffer size=" << events.size() << std::endl;
   }
 
@@ -95,7 +106,8 @@ class WaitDynamicTimePolicy : public BasePolicy {
     for (auto iter = events.begin(); iter != events.end();) {
       const Types::EventWrapper& event = *iter;
       auto duration = now - event.get_received_time();
-      if (duration > time_to_wait) {
+      // compare duration (system_clock::duration) with quarantine_time (chrono::duration<float>) by casting quarantine_time
+      if (duration > std::chrono::duration_cast<decltype(duration)>(quarantine_time)) {
         std::cout << "QUARANTINE SEND: event time=" << event.get_primary_time().val << std::endl;
         sent_events++;
         LOG_L3_BACKTRACE(
