@@ -27,6 +27,14 @@ class QuarantineOptionVisitor : public OptionDeclarationParserBaseVisitor {
   }
 
   std::any
+  visitDynamic_time_policy(OptionDeclarationParser::Dynamic_time_policyContext* ctx) override {
+    policy_type = Interface::Module::Quarantine::QuarantinePolicy::QuarantinePolicyType::
+      WaitDynamicTimePolicy;
+    visitChildren(ctx);
+    return {};
+  }
+
+  std::any
   visitDirect_policy(OptionDeclarationParser::Direct_policyContext* ctx) override {
     policy_type = Interface::Module::Quarantine::QuarantinePolicy::QuarantinePolicyType::
       DirectPolicy;

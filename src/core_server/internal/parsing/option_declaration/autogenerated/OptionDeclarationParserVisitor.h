@@ -29,6 +29,8 @@ public:
 
     virtual std::any visitDirect_policy(OptionDeclarationParser::Direct_policyContext *context) = 0;
 
+    virtual std::any visitDynamic_time_policy(OptionDeclarationParser::Dynamic_time_policyContext *context) = 0;
+
     virtual std::any visitStream_names(OptionDeclarationParser::Stream_namesContext *context) = 0;
 
     virtual std::any visitTime_span(OptionDeclarationParser::Time_spanContext *context) = 0;

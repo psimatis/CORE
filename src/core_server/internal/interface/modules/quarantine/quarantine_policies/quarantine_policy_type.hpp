@@ -10,6 +10,7 @@ struct QuarantinePolicy {
   enum QuarantinePolicyType {
     DirectPolicy,
     WaitFixedTimePolicy,
+    WaitDynamicTimePolicy,
   };
 
   QuarantinePolicyType policy_type;

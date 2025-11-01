@@ -5,6 +5,7 @@ WS : [ \t\r\n]+ -> skip ;
 K_CREATE   : C R E A T E;
 K_QUARANTINE   : Q U A R A N T I N E;
 K_FIXED_TIME : F I X E D '_' T I M E;
+K_DYNAMIC_TIME : D Y N A M I C '_' T I M E;
 K_DIRECT : D I R E C T;
 K_HOURS   : H O U R S?;
 K_MINUTES   : M I N U T E S?;
