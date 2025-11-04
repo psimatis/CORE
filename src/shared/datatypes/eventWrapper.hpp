@@ -46,15 +46,16 @@ class EventWrapper {
  public:
   std::shared_ptr<const Event> event;
   std::optional<mpz_class> marked_variables;
+  std::chrono::duration<float> quarantine_duration;
   EventWrapper() = default;
 
   EventWrapper(std::shared_ptr<const Event> event,
                std::optional<mpz_class> marked_variables)
-      : event(event), marked_variables(marked_variables) {
+      : event(event), marked_variables(marked_variables), quarantine_duration{} {
     set_times();
   }
 
-  EventWrapper(std::shared_ptr<const Event> event) : event(event) { set_times(); }
+  EventWrapper(std::shared_ptr<const Event> event) : event(event), quarantine_duration{} { set_times(); }
 
   // Add move
   EventWrapper(EventWrapper&& other)
@@ -62,7 +63,8 @@ class EventWrapper {
         primary_time(other.primary_time),
         received_time(other.received_time),
         moved(false),
-        marked_variables(other.marked_variables) {
+        marked_variables(other.marked_variables),
+        quarantine_duration(other.quarantine_duration) {
     other.moved = true;
     LOG_TRACE_L3("Moved EventWrapper with id {} to id {}", other.id, id);
   }
@@ -73,6 +75,7 @@ class EventWrapper {
     received_time = other.received_time;
     moved = false;
     marked_variables = other.marked_variables;
+    quarantine_duration = other.quarantine_duration;
     other.moved = true;
     LOG_TRACE_L3("Moved EventWrapper with id {} to id {}", other.id, id);
     return *this;
@@ -139,6 +142,24 @@ class EventWrapper {
     LOG_TRACE_L3("Converting EventWrapper with id {} to JSON", id);
     assert(!moved);
     return event->to_json();
+  }
+
+  const std::chrono::duration<float>& get_quarantine_duration() const {
+    LOG_TRACE_L3("Getting quarantine duration from EventWrapper with id {}", id);
+    assert(!moved);
+    return quarantine_duration;
+  }
+
+  void set_quarantine_duration(const std::chrono::duration<float>& duration) {
+    LOG_TRACE_L3("Setting quarantine duration for EventWrapper with id {}", id);
+    assert(!moved);
+    quarantine_duration = duration;
+  }
+
+  void set_quarantine_duration(std::chrono::duration<float>&& duration) {
+    LOG_TRACE_L3("Setting quarantine duration for EventWrapper with id {}", id);
+    assert(!moved);
+    quarantine_duration = std::move(duration);
   }
 
   std::string

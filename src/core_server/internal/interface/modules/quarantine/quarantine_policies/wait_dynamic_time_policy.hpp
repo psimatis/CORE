@@ -83,7 +83,8 @@ class WaitDynamicTimePolicy : public BasePolicy {
   avg_lateness = alpha * lateness + (1 - alpha) * avg_lateness;
   // Update quarantine_time as a chrono duration (seconds)
   quarantine_time = std::chrono::duration<float>(avg_lateness + SAFETY_MARGIN);
-  quarantine_time = std::clamp(quarantine_time, std::chrono::duration<float>(1.0f), std::chrono::duration<float>(5.0f));  // Clamp between 1 and 5 seconds
+  quarantine_time = std::clamp(quarantine_time, std::chrono::duration<float>(1.0f), std::chrono::duration<float>(40.0f));  // Clamp between 1 and 5 seconds
+  event.set_quarantine_duration(quarantine_time);
   std::cout << "QUARANTINE TIME UPDATED: avg_lateness=" << avg_lateness << " quarantine_time=" << quarantine_time.count() << std::endl;
 
     events.insert(std::lower_bound(events.begin(), events.end(), event.get_primary_time().val, is_nanoseconds_after_existing_event), std::move(event));
@@ -107,7 +108,7 @@ class WaitDynamicTimePolicy : public BasePolicy {
       const Types::EventWrapper& event = *iter;
       auto duration = now - event.get_received_time();
       // compare duration (system_clock::duration) with quarantine_time (chrono::duration<float>) by casting quarantine_time
-      if (duration > std::chrono::duration_cast<decltype(duration)>(quarantine_time)) {
+      if (duration > std::chrono::duration_cast<decltype(duration)>(event.get_quarantine_duration())) {
         std::cout << "QUARANTINE SEND: event time=" << event.get_primary_time().val << std::endl;
         sent_events++;
         LOG_L3_BACKTRACE(
